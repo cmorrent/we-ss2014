@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Business Informatics Group Quiz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="screen.css" type="text/css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/framework.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <img id="logo" src="img/big-logo-small.png" alt="BIG Logo">
+            <h1>Quiz</h1>
+            <button id="login">Abmelden</button>
+        </div>
+        <div id="main">
+            <div id="main_table">
+                <div id="infoline_top">
+                <div id="info_firstplayer"><div id="name_player1">Spieler 1</div><div id="roundinfo_player1">
+                <img id="p1_q1_status" class="question_status" src="img/correct-white.png" alt="Player 1 Question 1 status">
+                <img id="p1_q2_status" class="question_status" src="img/incorrect-white.png" alt="Player 1 Question 2 status">
+                <img id="p1_q3_status" class="question_status" src="img/unknown-white.png" alt="Player 1 Question 3 status">
+                </div></div>
+                <div id="question_category"><h3>EWA</h3></div>
+                <div id="info_secondplayer"><div id="name_player2">Spieler 2</div><div id="roundinfo_player2">
+                <img id="p2_q1_status" class="question_status" src="img/correct-white.png" alt="Player 2 Question 1 status">
+                <img id="p2_q2_status" class="question_status" src="img/correct-white.png" alt="Player 2 Question 2 status">
+                <img id="p2_q3_status" class="question_status" src="img/unknown-white.png" alt="Player 2 Question 3 status">
+                </div></div>
+                </div>
+                <div id="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</div>
+                <form>
+                <div class="formrow"><input id="answer1" class="answer" name="answer1" type="button" value="IT Strategie" /><input id="answer2" class="answer" name="answer2" type="button" value="Web Engineering" /></div>
+                <div class="formrow"><input id="answer3" class="answer" name="answer3" type="button" value="Semistrukturierte Daten" /><input id="answer4" class="answer" name="answer4" type="button" value="Objektorientierte Modellierung" /></div>
+                <div class="formrow"><input id="submitform" name="submit" type="submit" value="weiter"></div>
+                </form>
+                <p class="copyright">&copy; 2014 BIG Quiz</p>
+            </div>       
+        </div>
+    </body>
+</html>

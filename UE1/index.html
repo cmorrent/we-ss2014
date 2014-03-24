@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Business Informatics Group - Quiz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/framework.js"></script>
+    </head>
+    <body>
+        <div id = "header">
+            <div id="logo"><img src="img/big-logo-small.png" alt="logo"> <h1>Quiz </h1></div>
+            <div id="authenification"> <button id="login">Anmelden</button></div>
+        </div>
+        <div id = "main"> 
+            <div id="main_content"> 
+                <form>
+                <div> <h3>Pers&ouml;nliche Daten</h3></div>
+                <div class="formrow"><label class="pers">Vorname: </label> <input name="vorname" type="text"></div>
+                <div class="formrow"><label class="pers">Nachname: </label> <input name="nachname" type="text"></div>
+                <div class="formrow"><label class="pers">Geburtstag: </label> <input name="geb" type="date"></div>
+                <div class="formrow"><label class="pers">Geschlecht: </label> <select><option value="m">m&auml;nnlich</option><option value="w">weiblich</option></select></div>
+                
+                <div> <h3>Login Daten</h3></div>
+                <div class="formrow"><label class="log">Benutzername*: </label> <input name="benutzername" type="text" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen"></div>
+                <div class="formrow"><label class="log">Passwort*: </label> <input name="pwd" type="password" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen"></div>
+                <div class="formrow"><label class="log">&nbsp;</label><input id="submitform" name="submit" type="submit" value="Registrieren"></div>
+                <p class="infoline">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
+                </form>
+            </div>
+                
+        </div>
+        
+    </body>
+</html>

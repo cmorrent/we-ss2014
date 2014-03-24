@@ -1,0 +1,226 @@
+/* 
+    Created on : 20.03.2014, 13:23:41
+    Author     : Lukas
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+   height: 100%;
+   margin: 0em;
+   background-color: rgb(65,130,189);
+   color:#fff;
+   font-family: Arial, sans-serif;
+}
+
+#header{
+    width: 100%;
+    height: 3.7em;
+    background-color:rgb(3,48,88);
+    line-height: 4em;
+}
+
+#logo{
+    color: #fff;
+    height: 2.7em;
+    float:left;
+    padding: 0.5em 1em;
+}
+
+#header h1{
+    font-size:2em;
+    display: inline-block;
+}
+
+#login{
+    width:9em;
+    height:1.8em;
+    margin: 0.9em;
+    margin-right: 2em;
+    border:0.1em solid rgb(242,148,0);
+    border-radius:0.4em;
+    background-color:rgb(242,148,0);
+    color:#fff;
+    float: right;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#login:hover{
+    border-color: #fff;
+}
+
+#main{
+    background-image: url(img/style1-background.png);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#main_registration{
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 32em;
+}
+
+#main_registration h3{
+    padding-top: 2em;
+    padding-bottom: 1.4em;
+}
+
+.formrow{
+    height:3.1em;
+    line-height: 1.7em;
+}
+
+#main_registration .pers, #main_registration .log{
+    width:20%;
+    min-width:6em;
+    display:inline-block;
+}
+
+#main_registration input, #main_registration select{
+    float:right;
+    width:62%;
+    height: 2.5em;
+    min-width: 20em;
+    border:0.1em solid rgb(3,48,88);
+    border-radius:0.4em;
+}
+
+#main_registration #submitform {
+    float:right;
+    height: 1.8em;
+    width: 12em;
+    min-width: 8em;
+    font-size: 1.2em;
+    margin-top: -0.6em;
+    color: #fff;
+}
+
+#main_registration #submitform :valid{
+    background-color: blue;
+}
+
+#main_table {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 80%;
+}
+
+#main_table #infoline_top {
+    padding-top: 1.5em;
+    height: 3em;
+}
+#main_table #infoline_top h3 {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+#main_table #infoline_top #info_firstplayer {
+    width: 33.33%;
+    float: left;
+}
+#main_table #infoline_top #info_secondplayer {
+    width: 33.33%;
+    float: left;
+    text-align: right;
+}
+#main_table #infoline_top #name_player1 {
+    padding-left: 0.5em;
+}
+#main_table #infoline_top #name_player2 {
+    padding-right: 0.5em;
+}
+#main_table #infoline_top .question_status {
+    margin-right: 0.3em;
+}
+#main_table #infoline_top #roundinfo_player1, #main_table #infoline_top #roundinfo_player2 {
+    margin-top: 0.2em;
+}
+
+#main_table #question {
+    text-align: center;
+    margin-top: 1.7em;
+    margin-bottom: 1.7em;
+    font-size: 1.3em;
+}
+
+#main_table .formrow {
+    margin-bottom: 0.5em;
+}
+
+#main_table .answer {
+    width: 48%;
+    height: 4em;
+    line-height: 4em;
+    font-size: 0.8em;
+    margin-right: 1em;
+    background-color: #B9D6F0;
+    border-radius:0.8em;
+    border: 0;
+}
+#main_table .answer:hover {
+    background-color: #84ACD4;
+}
+
+.infoline{
+    margin-top:0.3em;
+    width:100%;
+    text-align: center;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    margin-top: 5em;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 32em){
+
+#main_registration {
+    min-width: 10em;
+    max-width: 100%;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+.formrow{
+    margin-bottom: 1.4em;
+}
+
+#main_registration .pers, #main_registration .log{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+#main_registration input, #main_registration select{
+    width: 96%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    float:left;
+}
+
+#main_registration #submitform {
+    float:right;
+    width: 11em;
+    min-width: 5em;
+    margin-top: 0;
+    font-size: 1em;
+}
+
+#main_registration h3{
+    padding-top: 1em;
+    padding-bottom: 0em;
+}
+
+#login{
+    width:6em;
+}
+    
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Business Informatics Group Quiz - Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="screen.css" type="text/css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/framework.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <img id="logo" src="img/big-logo-small.png" alt="BIG Logo">
+            <h1>Quiz</h1>
+            <button id="login">Anmelden</button>
+        </div>
+        <div id="main">
+            <div id="main_registration"> 
+                <form>
+                <h3>Pers&ouml;nliche Daten</h3>
+                <div class="formrow"><label class="pers">Vorname:</label><input name="vorname" type="text"></div>
+                <div class="formrow"><label class="pers">Nachname:</label><input name="nachname" type="text"></div>
+                <div class="formrow"><label class="pers">Geburtstag:</label><input name="geb" type="date"></div>
+                <div class="formrow"><label class="pers">Geschlecht:</label><select><option value="m">M&auml;nnlich</option><option value="w">Weiblich</option></select></div>
+                
+                <h3>Login Daten</h3>
+                <div class="formrow"><label class="log">Benutzername*:</label><input name="benutzername" type="text" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen"></div>
+                <div class="formrow"><label class="log">Passwort*:</label><input name="pwd" type="password" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen"></div>
+                <div class="formrow"><input id="submitform" name="submit" type="submit" value="Registrieren    >" disabled></div>
+                <p class="infoline">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
+                </form>
+                <p class="copyright">&copy; 2014 BIG Quiz</p>
+            </div>       
+        </div>
+    </body>
+</html>

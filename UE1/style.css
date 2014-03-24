@@ -1,0 +1,176 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20.03.2014, 13:23:41
+    Author     : Lukas
+*/
+
+body, html{
+   height: 100%;
+   margin: 0em;
+   background-color: rgb(65,130,189);
+   color:#fff;
+}
+
+#header{
+    width: 100%;
+    height: 4em;
+    background-color:rgb(3,48,88);
+    display: block;
+    line-height: 4em;
+}
+
+#logo{
+    
+    color: #fff;
+    height:4em;
+    float:left;
+    display: inline-block;
+    line-height: 4em;
+   
+}
+
+#logo img{
+    height: 3em;
+    vertical-align: middle;
+    
+}
+
+h1{
+    display:inline-block;
+    line-height:4em;
+    vertical-align: middle;
+    padding-left: 1em;
+    -webkit-margin-before: 0.0em;
+-webkit-margin-after: 0.0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-size:1em;
+}
+
+
+#authenification{
+    padding-right: 1em;
+    height: 4em;
+    float:right;
+    display: inline-block;
+}
+
+#login{
+   width:10em;
+   height:3em;
+   padding:0em;
+   border:0.1em solid rgb(242,148,0);
+   border-radius:.5em;
+   background-color:rgb(242,148,0);
+   color:#fff;
+     -webkit-transition: all 0.5s ease-out;
+   -moz-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+}
+
+#login:hover{
+    border-color:#fff;
+ 
+}
+
+
+#main_content{
+    margin-left:auto;
+    margin-right:auto;
+    width: 70%;
+    height: 100%;
+    padding-top:1em;
+    min-width: 30em;
+    max-width: 60em;
+    padding-left:1em;
+    padding-right:1em;
+   
+  
+}
+
+#main_content h3{
+    padding-top:3em;
+}
+
+.formrow{
+    height:2em;
+}
+
+#main_content .pers, #main_content .log{
+   
+    width:20%;
+    min-width:6em;
+    display:inline-block;
+}
+#main_content input, #main_content select{
+    float:right;
+    width:77%;
+    min-width: 20em;
+    border:0.1em solid rgb(3,48,88);
+    border-radius:.3em;
+    -webkit-padding-start: 0px;
+}
+
+#main_content #submitform{
+    width:40%;
+    float:right;
+}
+
+#main_content #submitform :valid{
+    background-color: blue;
+}
+
+
+#main{
+    width:100%;
+    min-height: 40em;
+    background-image: url(img/style1-background.png);
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+   
+     
+}
+
+.infoline{
+    font-size:0.8em;
+    margin-top:3em;
+    width:100%;
+    text-align: center;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+
+
+@media(max-width:32em){
+
+#main_content .pers, #main_content .log{
+   
+    width:100%;
+ 
+}
+#main_content input, #main_content select{
+  
+    width:100%;
+
+}
+
+#main_content {
+     width:95%;
+    min-width: 10em;
+    padding-left:0em;
+    padding-right: 0em;
+}
+
+#main_content input, #main_content select{
+    float:left;
+}
+    
+}
