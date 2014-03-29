@@ -11,11 +11,20 @@
         <script type="text/javascript" src="js/framework.js"></script>
     </head>
     <body>
-        <div id="header">
-            <img id="logo" src="img/big-logo-small.png" alt="BIG Logo">
-            <h1>Quiz</h1>
-            <button id="login">Abmelden</button>
-        </div>
+        <header>
+            <div id="header_content">
+                <img id="logo" src="img/big-logo-small.png" alt="BIG Logo" />
+                <h1>Quiz</h1>
+            </div>
+            <div id="navigation">
+                <h2 class="accessibility">Navigation</h2>
+                <ul class="navigation_list">
+                    <li>
+                        <input id="login" type="button" value="Abmelden" />
+                    </li>
+                </ul>
+            </div>
+        </header>
         <div id="main">
             <div id="main_table">
                 <div id="infoline_top">
@@ -37,8 +46,10 @@
                 <div class="formrow"><input id="answer3" class="answer" name="answer3" type="button" value="Semistrukturierte Daten" /><input id="answer4" class="answer" name="answer4" type="button" value="Objektorientierte Modellierung" /></div>
                 <div class="formrow"><input id="submitform" name="submit" type="submit" value="weiter"></div>
                 </form>
-                <p class="copyright">&copy; 2014 BIG Quiz</p>
             </div>       
         </div>
+        <footer>
+            &copy; 2014 Big Quiz
+        </footer>
     </body>
 </html>
