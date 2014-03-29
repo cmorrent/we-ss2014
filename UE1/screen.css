@@ -23,7 +23,11 @@ body
     background-repeat: no-repeat;
     background-color: #4182bd;
     height: 100%;
-    min-width: 30em;
+}
+
+#page_wrapper
+{
+    min-width: 20em;
 }
 
 
@@ -73,7 +77,6 @@ header
     display: inline;
 }
 
-
 #login
 {
     width:10em;
@@ -90,12 +93,41 @@ header
     font-size: 1em;
 }
 
-#main
+#main_game
 {
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    margin-left:auto;
+    margin-right:auto;
+    width: 80%;
+    max-width: 65em;
+}
+
+#answer_table
+{
+    display: inline-block;
+    width: 100%;
+}
+
+.answer_table_element
+{
+    width: calc(50% - 0.6em);
+    float: left;
+    padding: 0.3em;
+}
+
+#main_table .answer {
+    width: 100%;
+    height: 4em;
+    line-height: 4em;
+    font-size: 0.8em;
+    margin-right: 1em;
+    background-color: #B9D6F0;
+    border-radius:0.8em;
+    border: 0;
+}
+
+#time_left_bar
+{
+    width: 100%;
 }
 
 #main_registration{
@@ -143,12 +175,6 @@ header
     background-color: blue;
 }
 
-#main_table {
-    margin-left:auto;
-    margin-right:auto;
-    max-width: 80%;
-}
-
 #main_table #infoline_top {
     padding-top: 1.5em;
     height: 3em;
@@ -191,16 +217,7 @@ header
     margin-bottom: 0.5em;
 }
 
-#main_table .answer {
-    width: 48%;
-    height: 4em;
-    line-height: 4em;
-    font-size: 0.8em;
-    margin-right: 1em;
-    background-color: #B9D6F0;
-    border-radius:0.8em;
-    border: 0;
-}
+
 #main_table .answer:hover {
     background-color: #84ACD4;
 }
@@ -221,45 +238,49 @@ header
 
 @media screen and (max-width: 32em){
 
-#main_registration {
-    min-width: 10em;
-    max-width: 100%;
-    margin-left: 0em;
-    margin-right: 0em;
-}
+    #main_registration {
+        min-width: 10em;
+        max-width: 100%;
+        margin-left: 0em;
+        margin-right: 0em;
+    }
 
-.formrow{
-    margin-bottom: 1.4em;
-}
+    .formrow{
+        margin-bottom: 1.4em;
+    }
 
-#main_registration .pers, #main_registration .log{
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-}
-#main_registration input, #main_registration select{
-    width: 96%;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    float:left;
-}
+    #main_registration .pers, #main_registration .log{
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    #main_registration input, #main_registration select{
+        width: 96%;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        float:left;
+    }
 
-#main_registration #submitform {
-    float:right;
-    width: 11em;
-    min-width: 5em;
-    margin-top: 0;
-    font-size: 1em;
-}
+    #main_registration #submitform {
+        float:right;
+        width: 11em;
+        min-width: 5em;
+        margin-top: 0;
+        font-size: 1em;
+    }
 
-#main_registration h3{
-    padding-top: 1em;
-    padding-bottom: 0em;
-}
+    #main_registration h3{
+        padding-top: 1em;
+        padding-bottom: 0em;
+    }
 
-#login{
-    width:6em;
-}
-    
+    #login{
+        width:6em;
+    }
+
+    .answer_table_element
+    {
+        width: 100%;
+    }
 }
 
 /* Footer */

@@ -9,8 +9,11 @@
         <link rel="stylesheet" href="screen.css" type="text/css" />
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
+        <script type="text/javascript">
+        </script>
     </head>
     <body>
+        <div id="page_wrapper">
         <header>
             <div id="header_content">
                 <img id="logo" src="img/big-logo-small.png" alt="BIG Logo" />
@@ -25,28 +28,60 @@
                 </ul>
             </div>
         </header>
-        <div id="main">
+        <div id="main_game">
             <div id="main_table">
                 <div id="infoline_top">
-                <div id="info_firstplayer"><div id="name_player1">Spieler 1</div><div id="roundinfo_player1">
-                <img id="p1_q1_status" class="question_status" src="img/correct-white.png" alt="Player 1 Question 1 status">
-                <img id="p1_q2_status" class="question_status" src="img/incorrect-white.png" alt="Player 1 Question 2 status">
-                <img id="p1_q3_status" class="question_status" src="img/unknown-white.png" alt="Player 1 Question 3 status">
-                </div></div>
-                <div id="question_category"><h3>EWA</h3></div>
-                <div id="info_secondplayer"><div id="name_player2">Spieler 2</div><div id="roundinfo_player2">
-                <img id="p2_q1_status" class="question_status" src="img/correct-white.png" alt="Player 2 Question 1 status">
-                <img id="p2_q2_status" class="question_status" src="img/correct-white.png" alt="Player 2 Question 2 status">
-                <img id="p2_q3_status" class="question_status" src="img/unknown-white.png" alt="Player 2 Question 3 status">
-                </div></div>
-                </div>
+                    <div id="info_firstplayer">
+                        <div id="name_player1">Spieler 1</div>
+                        <div id="roundinfo_player1">
+                            <img id="p1_q1_status" class="question_status" src="img/correct-white.png" alt="Player 1 Question 1 status">
+                            <img id="p1_q2_status" class="question_status" src="img/incorrect-white.png" alt="Player 1 Question 2 status">
+                            <img id="p1_q3_status" class="question_status" src="img/unknown-white.png" alt="Player 1 Question 3 status">
+                        </div>
+                    </div>
+                    <div id="question_category"><h3>EWA</h3></div>
+                    <div id="info_secondplayer">
+                        <div id="name_player2">Spieler 2</div>
+                        <div id="roundinfo_player2">
+                            <img id="p2_q1_status" class="question_status" src="img/correct-white.png" alt="Player 2 Question 1 status">
+                            <img id="p2_q2_status" class="question_status" src="img/correct-white.png" alt="Player 2 Question 2 status">
+                            <img id="p2_q3_status" class="question_status" src="img/unknown-white.png" alt="Player 2 Question 3 status">
+                        </div>
+                    </div>
+                </div> <!-- end of main_table -->
                 <div id="question">Welche zwei LVAs werden im Modul EWA zusammengefasst?</div>
-                <form>
-                <div class="formrow"><input id="answer1" class="answer" name="answer1" type="button" value="IT Strategie" /><input id="answer2" class="answer" name="answer2" type="button" value="Web Engineering" /></div>
-                <div class="formrow"><input id="answer3" class="answer" name="answer3" type="button" value="Semistrukturierte Daten" /><input id="answer4" class="answer" name="answer4" type="button" value="Objektorientierte Modellierung" /></div>
-                <div class="formrow"><input id="submitform" name="submit" type="submit" value="weiter"></div>
-                </form>
-            </div>       
+                <div id="answer_table">
+                    <form>
+                        <div class="answer_table_element">
+                            <input id="answer1" class="answer" name="answer1" type="button" value="IT Strategie" />
+                        </div>
+                        <div class="answer_table_element">
+                            <input id="answer2" class="answer" name="answer2" type="button" value="Web Engineering" />
+                        </div>
+                        <div class="answer_table_element">
+                            <input id="answer3" class="answer" name="answer3" type="button" value="Semistrukturierte Daten" />
+                        </div>
+                        <div class="answer_table_element">
+                            <input id="answer4" class="answer" name="answer4" type="button" value="Objektorientierte Modellierung" />
+                        </div>
+                        <div class="answer_table_element">
+                            <div>
+                                Verbleibende Zeit: 00:00
+                                <meter id="time_left_bar" min="0" max="30" value="30">350 degrees</meter>
+                            </div>
+                            <br />
+                            <div>Letzes Spiel: Nie</div>
+                        </div>
+                        <div class="answer_table_element"><input id="submitform" name="submit" type="submit" value="weiter"></div>
+                        <!--
+                           <div class="formrow"><input id="answer1" class="answer" name="answer1" type="button" value="IT Strategie" /><input id="answer2" class="answer" name="answer2" type="button" value="Web Engineering" /></div>
+                           <div class="formrow"><input id="answer3" class="answer" name="answer3" type="button" value="Semistrukturierte Daten" /><input id="answer4" class="answer" name="answer4" type="button" value="Objektorientierte Modellierung" /></div>
+                           <div class="formrow"><input id="submitform" name="submit" type="submit" value="weiter"></div>
+                        -->
+                    </form>
+                </div>
+            </div>
+        </div>
         </div>
         <footer>
             &copy; 2014 Big Quiz
