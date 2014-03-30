@@ -10,6 +10,26 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
         <script type="text/javascript">
+            var COUNT_DOWN_VALUE = 30;
+
+            $( document ).ready(function() {
+                countDown(COUNT_DOWN_VALUE);
+            });
+
+            function countDown(value){
+                updateTime(value);
+                if(value > 0){
+                    window.setTimeout('countDown('+ --value+')',1000);
+                }else{
+                    countDown(COUNT_DOWN_VALUE);
+                }
+            }
+
+            function updateTime(value){
+                var timeString = secToMMSS(value);
+                $("#time_field").html(timeString);
+                $("#time_left_bar").attr("value", value);
+            }
         </script>
     </head>
     <body>
@@ -71,7 +91,7 @@
                         </div>
                         <div class="input_table_element input_table_right_to_left">
                             <div>
-                                Verbleibende Zeit: 00:00
+                                Verbleibende Zeit: <span id="time_field">00:00</span>
                                 <meter id="time_left_bar" min="0" max="30" value="30">350 degrees</meter>
                             </div>
                             <br />
