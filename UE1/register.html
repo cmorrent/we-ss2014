@@ -11,39 +11,70 @@
         <script type="text/javascript" src="js/framework.js"></script>
     </head>
     <body>
-        <header>
-            <div id="header_content">
-                <img id="logo" src="img/big-logo-small.png" alt="BIG Logo" />
-                <h1>Quiz</h1>
+        <div id="page_wrapper">
+            <header>
+                <div id="header_content">
+                    <img id="logo" src="img/big-logo-small.png" alt="BIG Logo" />
+                    <h1>Quiz</h1>
+                </div>
+                <div id="navigation">
+                    <h2 class="accessibility">Navigation</h2>
+                    <ul class="navigation_list">
+                        <li>
+                            <input id="login" type="button" value="Abmelden" />
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div id="main">
+                <div id="main_registration">
+                    <form>
+                        <h3>Pers&ouml;nliche Daten</h3>
+                        <div class="formrow">
+                            <label for="vorname" class="pers">Vorname:</label>
+                            <input id="vorname" name="vorname" type="text">
+                        </div>
+
+                        <div class="formrow">
+                            <label for="nachname" class="pers">Nachname:</label>
+                            <input id="nachname" name="nachname" type="text">
+                        </div>
+
+                        <div class="formrow">
+                            <label for="geb" class="pers">Geburtstag:</label>
+                            <input id="geb" name="geb" type="date">
+                        </div>
+
+                        <div class="formrow">
+                            <label class="pers">Geschlecht:</label>
+                            <select>
+                                <option value="m">M&auml;nnlich</option>
+                                <option value="w">Weiblich</option>
+                            </select>
+                        </div>
+
+                        <h3>Login Daten</h3>
+                        <div class="formrow">
+                            <label for="benutzername" class="log">Benutzername*:</label>
+                            <input id="benutzername" name="benutzername" type="text" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen">
+                        </div>
+
+                        <div class="formrow">
+                            <label for="pwd" class="log">Passwort*:</label>
+                            <input id="pwd" name="pwd" type="password" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen">
+                        </div>
+
+                        <div class="formrow">
+                            <input id="submitform" name="submit" type="submit" value="Registrieren" disabled>
+                        </div>
+
+                        <p class="infoline">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
+                    </form>
+                </div>
             </div>
-            <div id="navigation">
-                <h2 class="accessibility">Navigation</h2>
-                <ul class="navigation_list">
-                    <li>
-                        <input id="login" type="button" value="Abmelden" />
-                    </li>
-                </ul>
-            </div>
-        </header>
-        <div id="main">
-            <div id="main_registration"> 
-                <form>
-                <h3>Pers&ouml;nliche Daten</h3>
-                <div class="formrow"><label class="pers">Vorname:</label><input name="vorname" type="text"></div>
-                <div class="formrow"><label class="pers">Nachname:</label><input name="nachname" type="text"></div>
-                <div class="formrow"><label class="pers">Geburtstag:</label><input name="geb" type="date"></div>
-                <div class="formrow"><label class="pers">Geschlecht:</label><select><option value="m">M&auml;nnlich</option><option value="w">Weiblich</option></select></div>
-                
-                <h3>Login Daten</h3>
-                <div class="formrow"><label class="log">Benutzername*:</label><input name="benutzername" type="text" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen"></div>
-                <div class="formrow"><label class="log">Passwort*:</label><input name="pwd" type="password" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen"></div>
-                <div class="formrow"><input id="submitform" name="submit" type="submit" value="Registrieren" disabled></div>
-                <p class="infoline">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
-                </form>
-            </div>       
+            <footer>
+                &copy; 2014 BIG Quiz
+            </footer>
         </div>
-        <footer>
-            &copy; 2014 BIG Quiz
-        </footer>
     </body>
 </html>
