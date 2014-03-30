@@ -102,13 +102,24 @@ header
 {
     display: inline-block;
     width: 100%;
+    /*
     margin-bottom: 0.6em;
+    */
 }
 
 .input_table_element
 {
+    /**
     width:48%;
     padding: 0.3em;
+    **/
+    width: 50%;
+}
+
+.input_table_element_content
+{
+    widht:100%;
+    padding: 0.2em;
 }
 
 .input_table_left_to_right
@@ -129,7 +140,7 @@ header
     background-color: #B9D6F0;
     border-radius:0.8em;
     border: 0;
-    margin-left: 1em;
+
 }
 
 #time_left_bar
