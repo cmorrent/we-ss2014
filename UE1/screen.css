@@ -82,7 +82,7 @@ header
     width:10em;
     height:2.2em;
     padding:0em;
-    border:0.1em solid rgb(242,148,0);
+    border:0;
     border-radius:.5em;
     background-color:rgb(242,148,0);
     color:#fff;
@@ -107,7 +107,7 @@ header
 
 .input_table_element
 {
-    width: calc(50% - 0.6em);
+    width:48%;
     padding: 0.3em;
 }
 
@@ -129,6 +129,7 @@ header
     background-color: #B9D6F0;
     border-radius:0.8em;
     border: 0;
+    margin-left: 1em;
 }
 
 #time_left_bar
@@ -195,10 +196,6 @@ header
     font-weight: bold;
     font-size: 1em;
     float: right;
-}
-
-#main_registration #submitform :valid{
-    background-color: blue;
 }
 
 #main_table #infoline_top {
@@ -314,7 +311,7 @@ header
 
     .input_table_element
     {
-        width: calc(100% - 0.6em);
+        width: 100%;
     }
 
     #button_submitform
