@@ -262,6 +262,13 @@ header
     margin-top: 5em;
 }
 
+.errorline{
+    color:red;
+    width: 100%;
+    display: block;
+    text-align:right;
+}
+
 /* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 32em){

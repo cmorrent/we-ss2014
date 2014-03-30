@@ -9,6 +9,71 @@
         <link rel="stylesheet" href="screen.css" type="text/css" />
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
+        <script type="text/javascript">
+
+            function validateForm(){
+                var validateErrors = 0;
+
+
+                validateErrors += checkBirthdayErrorAndUpdateErrorField();
+                validateErrors += checkUsernameErrorAndUpdateErrorField();
+                validateErrors += checkPasswordErrorAndUpdateErrorField();
+
+                if(validateErrors == 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            function checkBirthdayErrorAndUpdateErrorField(){
+                if(hasFormValidation() && hasNativeDateInput()){
+                    return false;
+                }else if(validateBirthday()){
+                    $("#geb_error").html("");
+                    return false;
+                }else{
+                    $("#geb_error").html("Das Datum muss die form tt.mm.yyyy haben!");
+                    return true;
+                }
+            }
+
+            function validateBirthday(){
+                return false;
+            }
+
+            function checkUsernameErrorAndUpdateErrorField(){
+                if(hasFormValidation()){
+                    return false;
+                }else if(validateUsername()){
+                    $("#benutzername_error").html("");
+                    return false;
+                }else{
+                    $("#benutzername_error").html("Bitte verwenden Sie 4 - 8 Zeichen!");
+                    return true;
+                }
+            }
+
+            function validateUsername(){
+                return false;
+            }
+
+            function checkPasswordErrorAndUpdateErrorField(){
+                if(!hasFormValidation()){
+                    return false;
+                }else if(vaidatePassword()){
+                    $("#pwd_error").html("");
+                    return false;
+                }else{
+                    $("#pwd_error").html("Bitte verwenden Sie 4 - 8 Zeichen!");
+                    return true;
+                }
+            }
+
+            function vaidatePassword(){
+                return false;
+            }
+        </script>
     </head>
     <body>
         <div id="page_wrapper">
@@ -32,18 +97,19 @@
                         <h3>Pers&ouml;nliche Daten</h3>
                         <div class="formrow">
                             <label for="vorname" class="pers">Vorname:</label>
-                            <input id="vorname" name="vorname" type="text">
+                            <input id="vorname" name="vorname" type="text" />
                         </div>
 
                         <div class="formrow">
                             <label for="nachname" class="pers">Nachname:</label>
-                            <input id="nachname" name="nachname" type="text">
+                            <input id="nachname" name="nachname" type="text" />
                         </div>
 
                         <div class="formrow">
                             <label for="geb" class="pers">Geburtstag:</label>
-                            <input id="geb" name="geb" type="date">
+                            <input id="geb" name="geb" type="date" />
                         </div>
+                        <div id="geb_error" class="errorline"></div>
 
                         <div class="formrow">
                             <label class="pers">Geschlecht:</label>
@@ -56,16 +122,18 @@
                         <h3>Login Daten</h3>
                         <div class="formrow">
                             <label for="benutzername" class="log">Benutzername*:</label>
-                            <input id="benutzername" name="benutzername" type="text" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen">
+                            <input id="benutzername" name="benutzername" type="text" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen" />
                         </div>
+                        <div id="benutzername_error" class="errorline"></div>
 
                         <div class="formrow">
                             <label for="pwd" class="log">Passwort*:</label>
-                            <input id="pwd" name="pwd" type="password" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen">
+                            <input id="pwd" name="pwd" type="password" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen" />
                         </div>
+                        <div id="pwd_error" class="errorline"></div>
 
                         <div class="formrow">
-                            <input id="submitform" name="submit" type="submit" value="Registrieren" disabled>
+                            <input id="submitform" name="submit" type="submit" value="Registrieren" onclick="return validateForm();"/>
                         </div>
 
                         <p class="infoline">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
