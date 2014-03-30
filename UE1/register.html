@@ -57,7 +57,7 @@
             }
 
             function checkPasswordErrorAndUpdateErrorField(){
-                if(!hasFormValidation()){
+                if(hasFormValidation()){
                     return false;
                 }else if(vaidatePassword()){
                     $("#pwd_error").html("");
