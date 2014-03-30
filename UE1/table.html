@@ -18,7 +18,7 @@
 
             function countDown(value){
                 updateTime(value);
-                if(value > 0){
+                if(value >= 0){
                     window.setTimeout('countDown('+ --value+')',1000);
                 }else{
                     countDown(COUNT_DOWN_VALUE);
@@ -92,24 +92,18 @@
                         <div class="input_table_element input_table_right_to_left">
                             <div>
                                 Verbleibende Zeit: <span id="time_field">00:00</span>
-                                <meter id="time_left_bar" min="0" max="30" value="30">350 degrees</meter>
+                                <meter id="time_left_bar" min="0" max="30" value="30"></meter>
                             </div>
                             <br />
                             <div>Letzes Spiel: Nie</div>
                         </div>
-                        <!--
-                           <div class="formrow"><input id="answer1" class="answer" name="answer1" type="button" value="IT Strategie" /><input id="answer2" class="answer" name="answer2" type="button" value="Web Engineering" /></div>
-                           <div class="formrow"><input id="answer3" class="answer" name="answer3" type="button" value="Semistrukturierte Daten" /><input id="answer4" class="answer" name="answer4" type="button" value="Objektorientierte Modellierung" /></div>
-                           <div class="formrow"><input id="submitform" name="submit" type="submit" value="weiter"></div>
-                        -->
-
                     </div>
                 </form>
             </div>
         </div>
         </div>
         <footer>
-            &copy; 2014 Big Quiz
+            &copy; 2014 BIG Quiz
         </footer>
     </body>
 </html>

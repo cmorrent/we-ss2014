@@ -86,9 +86,6 @@ header
     border-radius:.5em;
     background-color:rgb(242,148,0);
     color:#fff;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
     font-weight: bold;
     font-size: 1em;
 }
@@ -105,6 +102,7 @@ header
 {
     display: inline-block;
     width: 100%;
+    margin-bottom: 0.6em;
 }
 
 .input_table_element
@@ -177,20 +175,23 @@ header
     font-size: 1.2em;
     margin-top: -0.6em;
     color: #fff;
+    background-image: url(img/white-arrow-right.png);
+    background-position: 95%;
+    background-repeat: no-repeat;
 }
 
 #button_submitform
 {
-    width:10em;
-    height:2.2em;
+    width:8em;
+    height:2em;
     padding:0em;
     border:0.1em solid #116d01;
     border-radius:.5em;
     background-color: #36d344;
+    background-image: url(img/white-arrow-right.png);
+    background-position: 95%;
+    background-repeat: no-repeat;
     color:#fff;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
     font-weight: bold;
     font-size: 1em;
     float: right;
@@ -232,6 +233,8 @@ header
 }
 
 #main_table #question {
+    width: 100%;
+    display: inline-block;
     text-align: center;
     margin-top: 1.7em;
     margin-bottom: 1.7em;
@@ -302,6 +305,13 @@ header
         width:6em;
     }
 
+    #main_table #infoline_top h3 {
+        margin-top: 4em;
+    }
+    #main_table #question {
+        margin-top: 0em;
+    }  
+
     .input_table_element
     {
         width: calc(100% - 0.6em);
@@ -316,5 +326,7 @@ header
 /* Footer */
 footer
 {
+    margin-top: 2em;
+    margin-bottom: 1em;
     text-align: center;
 }
