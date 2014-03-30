@@ -102,9 +102,7 @@ header
 {
     display: inline-block;
     width: 100%;
-    /*
     margin-bottom: 0.6em;
-    */
 }
 
 .input_table_element
@@ -118,7 +116,7 @@ header
 
 .input_table_element_content
 {
-    widht:100%;
+    /*width:100%;*/
     padding: 0.2em;
 }
 
