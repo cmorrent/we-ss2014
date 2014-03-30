@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
         <title>Business Informatics Group Quiz - Registration</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="screen.css" type="text/css" />
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/framework.js"></script>
@@ -94,7 +92,7 @@
             <div id="main">
                 <div id="main_registration">
                     <form>
-                        <h3>Pers&ouml;nliche Daten</h3>
+                        <h3>Persönliche Daten</h3>
                         <div class="formrow">
                             <label for="vorname" class="pers">Vorname:</label>
                             <input id="vorname" name="vorname" type="text" />
@@ -112,9 +110,9 @@
                         <div id="geb_error" class="errorline"></div>
 
                         <div class="formrow">
-                            <label class="pers">Geschlecht:</label>
-                            <select>
-                                <option value="m">M&auml;nnlich</option>
+                            <label class="pers" for="genderselect">Geschlecht:</label>
+                            <select name="gender" id="genderselect">
+                                <option value="m">Männlich</option>
                                 <option value="w">Weiblich</option>
                             </select>
                         </div>
@@ -122,13 +120,13 @@
                         <h3>Login Daten</h3>
                         <div class="formrow">
                             <label for="benutzername" class="log">Benutzername*:</label>
-                            <input id="benutzername" name="benutzername" type="text" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen" />
+                            <input id="benutzername" name="benutzername" type="text" required="required" pattern=".{4,8}" title="4 - 8 Zeichen" />
                         </div>
                         <div id="benutzername_error" class="errorline"></div>
 
                         <div class="formrow">
                             <label for="pwd" class="log">Passwort*:</label>
-                            <input id="pwd" name="pwd" type="password" required pattern=".{4,8}" title="4 - 8 Zeichen" x-moz-errormessage="Bitte verwenden Sie 4 - 8 Zeichen" />
+                            <input id="pwd" name="pwd" type="password" required="required" pattern=".{4,8}" title="4 - 8 Zeichen" />
                         </div>
                         <div id="pwd_error" class="errorline"></div>
 
@@ -141,7 +139,7 @@
                 </div>
             </div>
             <footer>
-                &copy; 2014 BIG Quiz
+                © 2014 BIG Quiz
             </footer>
         </div>
     </body>
