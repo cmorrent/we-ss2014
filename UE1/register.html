@@ -25,7 +25,7 @@
             }
 
             function checkBirthdayErrorAndUpdateErrorField(){
-                if(!hasFormValidation() && hasNativeDateInput()){
+                if(hasFormValidation() && hasNativeDateInput()){
                     return false;
                 }else if(validateBirthdayDate()){
                     $("#geb_error").html("");
@@ -61,7 +61,7 @@
             }
 
             function checkUsernameErrorAndUpdateErrorField(){
-                if(!hasFormValidation()){
+                if(hasFormValidation()){
                     return false;
                 }else if(validateUsername()){
                     $("#benutzername_error").html("");
