@@ -25,23 +25,43 @@
             }
 
             function checkBirthdayErrorAndUpdateErrorField(){
-                if(hasFormValidation() && hasNativeDateInput()){
+                if(!hasFormValidation() && hasNativeDateInput()){
                     return false;
-                }else if(validateBirthday()){
+                }else if(validateBirthdayDate()){
                     $("#geb_error").html("");
                     return false;
                 }else{
-                    $("#geb_error").html("Das Datum muss die form tt.mm.yyyy haben!");
+                    $("#geb_error").html("Das Datum muss existier und die Form tt.mm.yyyy haben!");
                     return true;
                 }
             }
 
-            function validateBirthday(){
+            function validateBirthdayDate(){
+                var dateValue = $("#geb").val();
+                if(dateValue == ""){
+                    return true;
+                }else{
+                    var dateString = getNormalizedDateString("#geb");
+                    return checkDate(dateString);
+                }
+            }
+
+            function checkDate(dateString){
+                var dateElemntArray = dateString.split(".");
+                if(dateElemntArray.length == 3){
+                    var day = dateElemntArray[0];
+                    var month = dateElemntArray[1] - 1;
+                    var year = dateElemntArray[2];
+
+                    var date = new Date(year, month, day);
+
+                    return((day == date.getDate()) && (month == date.getMonth()) && (year == date.getFullYear()));
+                }
                 return false;
             }
 
             function checkUsernameErrorAndUpdateErrorField(){
-                if(hasFormValidation()){
+                if(!hasFormValidation()){
                     return false;
                 }else if(validateUsername()){
                     $("#benutzername_error").html("");
@@ -53,7 +73,12 @@
             }
 
             function validateUsername(){
-                return false;
+                var username = $("#benutzername").val();
+                if((username.length >= 4) && (username.length <= 8)){
+                    return true;
+                }else{
+                    return false;
+                }
             }
 
             function checkPasswordErrorAndUpdateErrorField(){
@@ -69,7 +94,12 @@
             }
 
             function vaidatePassword(){
-                return false;
+                var password = $("#pwd").val();
+                if((password.length >= 4) && (password.length <= 8)){
+                    return true;
+                }else{
+                    return false;
+                }
             }
         </script>
     </head>
