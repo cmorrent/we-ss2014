@@ -101,25 +101,33 @@ header
     max-width: 65em;
 }
 
-#answer_table
+.input_table
 {
     display: inline-block;
     width: 100%;
 }
 
-.answer_table_element
+.input_table_element
 {
     width: calc(50% - 0.6em);
-    float: left;
     padding: 0.3em;
 }
 
-#main_table .answer {
+.input_table_left_to_right
+{
+    float: left;
+}
+
+.input_table_right_to_left
+{
+    float: right;
+}
+
+.answer {
     width: 100%;
     height: 4em;
     line-height: 4em;
     font-size: 0.8em;
-    margin-right: 1em;
     background-color: #B9D6F0;
     border-radius:0.8em;
     border: 0;
@@ -169,6 +177,23 @@ header
     font-size: 1.2em;
     margin-top: -0.6em;
     color: #fff;
+}
+
+#button_submitform
+{
+    width:10em;
+    height:2.2em;
+    padding:0em;
+    border:0.1em solid #116d01;
+    border-radius:.5em;
+    background-color: #36d344;
+    color:#fff;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    font-weight: bold;
+    font-size: 1em;
+    float: right;
 }
 
 #main_registration #submitform :valid{
@@ -277,7 +302,12 @@ header
         width:6em;
     }
 
-    .answer_table_element
+    .input_table_element
+    {
+        width: calc(100% - 0.6em);
+    }
+
+    #button_submitform
     {
         width: 100%;
     }
