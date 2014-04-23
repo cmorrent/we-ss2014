@@ -8,4 +8,5 @@ public enum DisplayPageEnum {
     question,
     roundcomplete,
     finish,
+    error
 }
