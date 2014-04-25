@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 public class BigQuizServlet extends HttpServlet{
@@ -30,9 +31,15 @@ public class BigQuizServlet extends HttpServlet{
         gameService = new GameServiceImpl();
     }
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        doGet(request, response);
+    }
+
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
+
         DisplayPageEnum displayPageEnum = null;
 
         try {

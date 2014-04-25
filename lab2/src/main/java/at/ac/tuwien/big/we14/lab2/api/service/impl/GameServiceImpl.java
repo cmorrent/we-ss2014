@@ -16,6 +16,11 @@ public class GameServiceImpl implements GameService{
     }
 
     @Override
+    public void startGame(Game game) {
+
+    }
+
+    @Override
     public void updateGameWithChoices(Game game, List<Integer> choices) {
 
     }
