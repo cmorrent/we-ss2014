@@ -13,6 +13,8 @@ public class Round {
 
     private List<Answer> answers;
 
+    private Answer actualAnswer;
+
     private RoundStatus roundStatus;
 
     private int playedQuestionCount;
@@ -49,4 +51,11 @@ public class Round {
         this.playedQuestionCount = playedQuestionCount;
     }
 
+    public Answer getActualAnswer() {
+        return actualAnswer;
+    }
+
+    public void setActualAnswer(Answer actualAnswer) {
+        this.actualAnswer = actualAnswer;
+    }
 }

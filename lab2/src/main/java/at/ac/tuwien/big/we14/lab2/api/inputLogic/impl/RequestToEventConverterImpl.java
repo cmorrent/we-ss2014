@@ -4,15 +4,10 @@ import at.ac.tuwien.big.we14.lab2.api.inputLogic.Event.Event;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.Event.EventType;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.InvalidInputException;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.RequestToEventConverter;
-import sun.util.logging.PlatformLogger;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by willi on 4/19/14.

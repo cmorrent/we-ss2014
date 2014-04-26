@@ -10,6 +10,8 @@ public class Game {
 
     private GameStatus gameStatus;
 
+    private Round actualRound;
+
 
     public List<Round> getRounds() {
         return rounds;
@@ -27,4 +29,11 @@ public class Game {
         this.gameStatus = gameStatus;
     }
 
+    public Round getActualRound() {
+        return actualRound;
+    }
+
+    public void setActualRound(Round actualRound) {
+        this.actualRound = actualRound;
+    }
 }
