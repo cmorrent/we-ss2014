@@ -1,3 +1,5 @@
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
+<% Game game = (Game) session.getAttribute("game"); %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -39,7 +41,10 @@
                         <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="unknown">Unbekannt</span></li>
                     </ul>
                 </div>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span> Sport</div>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span>
+
+                    <%= game.getActualRound().getCategory().getName() %>
+                </div>
             </section>
             
             <!-- Question -->
