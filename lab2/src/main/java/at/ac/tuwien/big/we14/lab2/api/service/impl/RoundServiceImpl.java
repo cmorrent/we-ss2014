@@ -3,6 +3,7 @@ package at.ac.tuwien.big.we14.lab2.api.service.impl;
 import at.ac.tuwien.big.we14.lab2.api.Category;
 import at.ac.tuwien.big.we14.lab2.api.Question;
 import at.ac.tuwien.big.we14.lab2.api.domain.Answer;
+import at.ac.tuwien.big.we14.lab2.api.domain.AnswerStatus;
 import at.ac.tuwien.big.we14.lab2.api.domain.Round;
 import at.ac.tuwien.big.we14.lab2.api.domain.RoundStatus;
 import at.ac.tuwien.big.we14.lab2.api.service.RoundService;
@@ -58,6 +59,8 @@ public class RoundServiceImpl implements RoundService {
         for(int i = 0; i < randomQuestions.size(); i++){
             Question q = randomQuestions.get(i);
             Answer a = new Answer();
+            a.setPlayer1AnswerStatus(AnswerStatus.open);
+            a.setPlayer2AnswerStatus(AnswerStatus.open);
             a.setQuestion(q);
             answers.add(a);
         }
