@@ -12,7 +12,9 @@ import at.ac.tuwien.big.we14.lab2.api.inputLogic.InvalidInputException;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.RequestToEventConverter;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.impl.RequestToEventConverterImpl;
 import at.ac.tuwien.big.we14.lab2.api.service.GameService;
+import at.ac.tuwien.big.we14.lab2.api.service.RoundService;
 import at.ac.tuwien.big.we14.lab2.api.service.impl.GameServiceImpl;
+import at.ac.tuwien.big.we14.lab2.api.service.impl.RoundServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -28,10 +30,12 @@ public class BigQuizServlet extends HttpServlet{
 
     private RequestToEventConverter requestToEventConverter;
     private GameService gameService;
+    private RoundService roundService;
 
 
     public void init(){
         requestToEventConverter = new RequestToEventConverterImpl();
+        roundService = new RoundServiceImpl();
         initGameService();
     }
 
@@ -44,6 +48,8 @@ public class BigQuizServlet extends HttpServlet{
         QuestionDataProvider provider = factory.createQuestionDataProvider();
         List<Category> categories = provider.loadCategoryData();
         gs.setCategories(categories);
+
+        gs.setRoundService(roundService);
 
         gameService = gs;
     }

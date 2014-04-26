@@ -1,3 +1,7 @@
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.Choice" %>
+<%@ page import="java.util.List" %>
+<% Game game = (Game) session.getAttribute("game"); %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -39,7 +43,10 @@
                         <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="unknown">Unbekannt</span></li>
                     </ul>
                 </div>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span> Sport</div>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span>
+
+                    <%= game.getActualRound().getCategory().getName() %>
+                </div>
             </section>
             
             <!-- Question -->
@@ -47,14 +54,21 @@
                 
                 <form id="questionform" method="post">
                     <h2 id="questionheading" class="accessibility">Frage</h2>
-                    <p id="questiontext">Welche zwei LVAs werden im Model EWA zusammengefasst?</p>
+                    <p id="questiontext"><%= game.getActualRound().getActualAnswer().getQuestion().getText() %></p>
                     <ul id="answers">
-                        <li><input id="option1" name="option1" type="checkbox" value="1"/><label for="option1">IT Strategie</label></li>
-                        <li><input id="option2" name="option2" type="checkbox" value="2"/><label for="option2">Web Engineering</label></li>
-                        <li><input id="option3" name="option3" type="checkbox" value="3"/><label for="option3">Semistrukturierte Daten</label></li>
-                        <li><input id="option4" name="option4" type="checkbox" value="4"/><label for="option4">Objektorientierte Modellierung</label></li>
+                        <% List<Choice> choices = game.getActualRound().getActualAnswer().getQuestion().getAllChoices(); %>
+                        <% for(int i = 0; i < choices.size(); i++) { %>
+                        <% Choice choice = choices.get(i); %>
+                            <li>
+                                <input id="option<%= i %>"
+                                       name="option<%= i %>"
+                                       type="checkbox"
+                                       value="<%= choice.getId()%>" />
+                                <label for="option<%= i %>"><%= choice.getText()%></label>
+                            </li>
+                        <% } %>
                     </ul>
-                    <input id="answer_count" name="answer_count" value="4" type="hidden"/>
+                    <input id="answer_count" name="answer_count" value="<%= choices.size()%>" type="hidden"/>
                     <input id="action" name="action" type="hidden" value="action_question" />
                     <input id="timeleftvalue" type="hidden" value="100"/>
                     <input id="question_id" name="question_id" type="hidden" value="2"/>

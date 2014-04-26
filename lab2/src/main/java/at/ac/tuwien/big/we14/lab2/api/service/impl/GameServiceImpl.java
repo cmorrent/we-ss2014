@@ -7,12 +7,12 @@ import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
 import at.ac.tuwien.big.we14.lab2.api.domain.*;
 import at.ac.tuwien.big.we14.lab2.api.impl.ServletQuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.service.GameService;
+import at.ac.tuwien.big.we14.lab2.api.service.RoundService;
+import at.ac.tuwien.big.we14.lab2.tools.RandomPoolSelector;
 import com.sun.xml.internal.messaging.saaj.packaging.mime.util.QEncoderStream;
 
 import javax.servlet.ServletContext;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,17 +21,32 @@ import java.util.logging.Logger;
  */
 public class GameServiceImpl implements GameService{
 
+    public final int CATEGORIES_PER_GAME_COUNT = 5;
+
     Logger log = Logger.getLogger(getClass().getName());
+
+    RandomPoolSelector<Category> randomPoolSelector = new RandomPoolSelector<Category>();
+
+    RoundService roundService;
+
     private List<Category> categories;
 
     @Override
     public Game createNewGameWithRandomQuestions() {
         Game g = new Game();
-        g.setGameStatus(GameStatus.not_started);
+        List<Category> randomCategories = randomPoolSelector.getRandomPoolWithSizeForList(CATEGORIES_PER_GAME_COUNT, categories);
+        List<Round> rounds = roundService.createRoundsWithAnswersFromCategories(randomCategories);
 
-        //TODO: Implement init settings
+        g.setGameStatus(GameStatus.not_started);
+        g.setRounds(rounds);
+        g.setActualRound(rounds.get(0));
+
+        //log.log(Level.SEVERE, g.getActualRound().getCategory().getName());
+
+
         return g;
     }
+
 
     @Override
     public void startGame(Game game) {
@@ -149,5 +164,10 @@ public class GameServiceImpl implements GameService{
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
+    }
+
+
+    public void setRoundService(RoundService roundService) {
+        this.roundService = roundService;
     }
 }
