@@ -60,6 +60,8 @@ public class GameServiceImpl implements GameService{
         game.setActualRound(round);
 
         Answer answer = round.getAnswers().get(0);
+        answer.setPlayer1AnswerStatus(AnswerStatus.open);
+        answer.setPlayer2AnswerStatus(AnswerStatus.open);
         answer.setTimeStamp(new Date());
 
     }

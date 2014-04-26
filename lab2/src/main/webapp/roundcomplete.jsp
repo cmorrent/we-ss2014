@@ -1,4 +1,5 @@
 <%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.AnswerStatus" %>
 <% Game game = (Game) session.getAttribute("game"); %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
@@ -34,18 +35,34 @@
                 <div id="player1info" class="playerinfo">
                     <span id="player1name" class="playername"><%= game.getPlayer1Name() %></span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class="correct">Richtig</span></li>
+                        <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player1answer<%= i+1 %>"
+                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
+                        		class="correct">Richtig	
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
+                        		class="incorrect">Falsch
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.open) { %>
+                        		class="unknown">Unbekannt
+                        	<% } %>	
+                        	</span></li>
+                        <% } %>
                     </ul>
                     <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
                     <span id="player2name" class="playername"><%= game.getPlayer2Name() %></span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player2answer1" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="correct">Richtig</span></li>
+                        <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i+1 %>"
+                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
+                        		class="correct">Richtig	
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
+                        		class="incorrect">Falsch
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.open) { %>
+                        		class="unknown">Unbekannt
+                        	<% } %>	
+                        	</span></li>
+                        <% } %>
                     </ul>
                     <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
                 </div>

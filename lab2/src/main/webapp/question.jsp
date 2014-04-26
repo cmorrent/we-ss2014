@@ -1,5 +1,6 @@
 <%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
 <%@ page import="at.ac.tuwien.big.we14.lab2.api.Choice" %>
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.AnswerStatus" %>
 <%@ page import="java.util.List" %>
 <% Game game = (Game) session.getAttribute("game"); %>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -30,17 +31,33 @@
                 <div id="player1info">
                     <span id="player1name"><%= game.getPlayer1Name() %></span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class="unknown">Unbekannt</span></li>
+                    	<% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player1answer<%= i+1 %>"
+                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
+                        		class="correct">Richtig	
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
+                        		class="incorrect">Falsch
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.open) { %>
+                        		class="unknown">Unbekannt
+                        	<% } %>	
+                        	</span></li>
+                        <% } %>
                     </ul>
                 </div>
                 <div id="player2info">
                     <span id="player2name"><%= game.getPlayer2Name() %></span>
                     <ul class="playerroundsummary">
-                        <li><span class="accessibility">Frage 1:</span><span id="player2answer1" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class="correct">Richtig</span></li>
-                        <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="unknown">Unbekannt</span></li>
+                        <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i+1 %>"
+                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
+                        		class="correct">Richtig	
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
+                        		class="incorrect">Falsch
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.open) { %>
+                        		class="unknown">Unbekannt
+                        	<% } %>	
+                        	</span></li>
+                        <% } %>
                     </ul>
                 </div>
                 <div id="currentcategory"><span class="accessibility">Kategorie:</span>
@@ -52,7 +69,7 @@
             <!-- Question -->
             <section id="question" aria-labelledby="questionheading">
                 
-                <form id="questionform" method="post">
+                <form id="questionform" method="post" action="bigQuiz">
                     <h2 id="questionheading" class="accessibility">Frage</h2>
                     <p id="questiontext"><%= game.getActualRound().getActualAnswer().getQuestion().getText() %></p>
                     <ul id="answers">
