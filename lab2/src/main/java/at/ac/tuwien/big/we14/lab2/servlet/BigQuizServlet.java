@@ -1,7 +1,11 @@
 package at.ac.tuwien.big.we14.lab2.servlet;
 
+import at.ac.tuwien.big.we14.lab2.api.Category;
+import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
+import at.ac.tuwien.big.we14.lab2.api.QuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.domain.DisplayPageEnum;
 import at.ac.tuwien.big.we14.lab2.api.domain.Game;
+import at.ac.tuwien.big.we14.lab2.api.impl.ServletQuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.Event.Event;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.Event.EventType;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.InvalidInputException;
@@ -11,6 +15,7 @@ import at.ac.tuwien.big.we14.lab2.api.service.GameService;
 import at.ac.tuwien.big.we14.lab2.api.service.impl.GameServiceImpl;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,8 +32,22 @@ public class BigQuizServlet extends HttpServlet{
 
     public void init(){
         requestToEventConverter = new RequestToEventConverterImpl();
-        gameService = new GameServiceImpl();
+        initGameService();
     }
+
+
+    public void initGameService(){
+        GameServiceImpl gs = new GameServiceImpl();
+
+        ServletContext servletContext = getServletContext();
+        QuizFactory factory = new ServletQuizFactory(servletContext);
+        QuestionDataProvider provider = factory.createQuestionDataProvider();
+        List<Category> categories = provider.loadCategoryData();
+        gs.setCategories(categories);
+
+        gameService = gs;
+    }
+
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {

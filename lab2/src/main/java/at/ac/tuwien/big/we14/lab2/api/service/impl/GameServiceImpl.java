@@ -1,16 +1,28 @@
 package at.ac.tuwien.big.we14.lab2.api.service.impl;
 
+import at.ac.tuwien.big.we14.lab2.api.Category;
 import at.ac.tuwien.big.we14.lab2.api.Question;
-import at.ac.tuwien.big.we14.lab2.api.domain.Game;
-import at.ac.tuwien.big.we14.lab2.api.domain.GameStatus;
+import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
+import at.ac.tuwien.big.we14.lab2.api.domain.*;
+import at.ac.tuwien.big.we14.lab2.api.impl.ServletQuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.service.GameService;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.util.QEncoderStream;
 
+import javax.servlet.ServletContext;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by willi on 4/23/14.
  */
 public class GameServiceImpl implements GameService{
+
+    Logger log = Logger.getLogger(getClass().getName());
+    private List<Category> categories;
+
     @Override
     public Game createNewGameWithRandomQuestions() {
         Game g = new Game();
@@ -23,7 +35,14 @@ public class GameServiceImpl implements GameService{
     @Override
     public void startGame(Game game) {
         game.setGameStatus(GameStatus.open);
-        //TODO: Implement other settings (timestamp)
+
+        Round round = game.getRounds().get(0);
+        round.setRoundStatus(RoundStatus.open);
+        game.setActualRound(round);
+
+        Answer answer = round.getAnswers().get(0);
+        answer.setTimeStamp(new Date());
+
     }
 
     @Override
@@ -53,5 +72,15 @@ public class GameServiceImpl implements GameService{
     @Override
     public boolean checkFinish(Game game) {
         return false;
+    }
+
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }

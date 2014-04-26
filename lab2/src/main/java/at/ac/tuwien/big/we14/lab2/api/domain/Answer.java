@@ -2,6 +2,8 @@ package at.ac.tuwien.big.we14.lab2.api.domain;
 
 import at.ac.tuwien.big.we14.lab2.api.Question;
 
+import java.util.Date;
+
 /**
  * Created by willi on 4/9/14.
  */
@@ -15,6 +17,8 @@ public class Answer {
     private int player1AnswerTimeInSeconds;
 
     private int player2AnswerTimeInSeconds;
+
+    private Date timeStamp;
 
 
     public Question getQuestion() {
@@ -57,5 +61,11 @@ public class Answer {
         this.player2AnswerTimeInSeconds = player2AnswerTimeInSeconds;
     }
 
+    public Date getTimeStamp() {
+        return timeStamp;
+    }
 
+    public void setTimeStamp(Date timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 }
