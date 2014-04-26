@@ -43,5 +43,26 @@
 
         <!-- footer -->
         <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        
+        <script type="text/javascript">
+            //<![CDATA[
+            
+            $(document).ready(function() {
+            	if(supportsLocalStorage()) {
+                    var date = new Date();
+                    var day = date.getDate();
+                    var month = date.getMonth()+1;
+                    var year = date.getFullYear();
+                    var hour = date.getHours();
+                    var min = date.getMinutes();
+                    var sec = date.getSeconds();
+                    var timestamp = day+"."+month+"."+year+", "+hour+":"+min+":"+sec;
+                    $("#timestamp").text(timestamp);
+                    localStorage.lastgameTimestamp = timestamp;
+                }
+            });
+            
+            //]]>
+        </script>
     </body>
 </html>
