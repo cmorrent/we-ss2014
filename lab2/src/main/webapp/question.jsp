@@ -45,16 +45,19 @@
             <!-- Question -->
             <section id="question" aria-labelledby="questionheading">
                 
-                <form id="questionform" action="question.jsp" method="post">
+                <form id="questionform" method="post">
                     <h2 id="questionheading" class="accessibility">Frage</h2>
                     <p id="questiontext">Welche zwei LVAs werden im Model EWA zusammengefasst?</p>
                     <ul id="answers">
-                        <li><input id="option1" type="checkbox"/><label for="option1">IT Strategie</label></li>
-                        <li><input id="option2" type="checkbox"/><label for="option2">Web Engineering</label></li>
-                        <li><input id="option3" type="checkbox"/><label for="option3">Semistrukturierte Daten</label></li>
-                        <li><input id="option4" type="checkbox"/><label for="option4">Objektorientierte Modellierung</label></li>
+                        <li><input id="option1" name="option1" type="checkbox" value="1"/><label for="option1">IT Strategie</label></li>
+                        <li><input id="option2" name="option2" type="checkbox" value="2"/><label for="option2">Web Engineering</label></li>
+                        <li><input id="option3" name="option3" type="checkbox" value="3"/><label for="option3">Semistrukturierte Daten</label></li>
+                        <li><input id="option4" name="option4" type="checkbox" value="4"/><label for="option4">Objektorientierte Modellierung</label></li>
                     </ul>
+                    <input id="answer_count" name="answer_count" value="4" type="hidden"/>
+                    <input id="action" name="action" type="hidden" value="action_question" />
                     <input id="timeleftvalue" type="hidden" value="100"/>
+                    <input id="question_id" name="question_id" type="hidden" value="2"/>
                     <input id="next" type="submit" value="weiter" accesskey="s"/>
                 </form>
             </section>

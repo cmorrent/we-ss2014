@@ -10,6 +10,12 @@ public class Event {
     private int questionId;
     private List<Integer> choiceIds;
 
+    public static Event initWithEventType(EventType eventType){
+        Event e = new Event();
+        e.setEventType(eventType);
+        return e;
+    }
+
     public EventType getEventType() {
         return eventType;
     }
