@@ -69,7 +69,7 @@
             </section>
             
             <section id="lastgame">
-                <p>Letztes Spiel: Nie</p>
+                <p>Letztes Spiel: <span id="lastgameTimestamp">Nie</span></p>
             </section>
         </section>
 
@@ -91,6 +91,14 @@
                 meter.attr('max', maxtime);
                 meter.attr('low', maxtime/100*20);
                 timeleft.text(secToMMSS(maxtime));
+                
+                if(supportsLocalStorage()) {
+                    if(localStorage.lastgameTimestamp != null) {
+                        $("#lastgameTimestamp").text(localStorage.lastgameTimestamp);
+                    }
+                } else {
+                    $("#lastgameTimestamp").text("Nie");
+                }
             });
             
             // update time
