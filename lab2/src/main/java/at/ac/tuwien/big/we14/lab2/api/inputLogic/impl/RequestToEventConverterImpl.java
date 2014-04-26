@@ -27,7 +27,6 @@ public class RequestToEventConverterImpl implements RequestToEventConverter{
 
     public final String eventStringGotoFinish = "action_gotoFinish";
 
-    Logger logger = Logger.getLogger("");
 
     @Override
     public Event render(HttpServletRequest request) throws InvalidInputException {
