@@ -58,8 +58,29 @@ public class BigQuizServlet extends HttpServlet{
 
 
     private void executeEventOnGame(Event event, Game game){
-        List<Integer> choices = event.getChoiceIds();
-        gameService.updateGameWithChoices(game, choices);
+        if(event.getEventType() == EventType.start){
+            gameService.startGame(game);
+        }else if (event.getEventType() == EventType.answer){
+            executeAnserEventOnGame(event, game);
+        }else if (event.getEventType() == EventType.restart){
+            executeRestartEventOnGame(event, game);
+        }
+    }
+    
+
+    private void executeAnserEventOnGame(Event event, Game game){
+        if(event.getQuestionId() == gameService.getActualQuestion(game).getId()){
+            List<Integer> choices = event.getChoiceIds();
+            gameService.updateGameWithChoices(game, choices);
+        }
+    }
+
+
+    private void executeRestartEventOnGame(Event event, Game game){
+        if(event.getEventType() == EventType.restart){
+            game = gameService.createNewGameWithRandomQuestions();
+            gameService.startGame(game);
+        }
     }
 
 

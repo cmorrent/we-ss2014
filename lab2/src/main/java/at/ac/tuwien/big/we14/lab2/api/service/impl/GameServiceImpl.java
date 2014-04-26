@@ -22,7 +22,8 @@ public class GameServiceImpl implements GameService{
 
     @Override
     public void startGame(Game game) {
-
+        game.setGameStatus(GameStatus.open);
+        //TODO: Implement other settings (timestamp)
     }
 
     @Override

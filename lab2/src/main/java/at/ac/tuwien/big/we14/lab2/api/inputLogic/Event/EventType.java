@@ -9,4 +9,5 @@ public enum EventType {
     answer,
     gotoNextQuestionFromRoundComplete,
     gotoFinish,
+    restart,
 }
