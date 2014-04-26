@@ -19,7 +19,7 @@
         </nav>
         
         <section role="main" id="quiz">
-          <form method="post">
+          <form action="bigQuiz" method="post">
             <input id="action" name="action" type="hidden" value="action_start"/>
             <a id="startgame" href="#" onclick="$(this).closest('form').submit()">Quiz starten</a>
           </form>

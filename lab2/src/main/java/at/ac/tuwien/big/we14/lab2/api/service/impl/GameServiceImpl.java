@@ -40,6 +40,9 @@ public class GameServiceImpl implements GameService{
         g.setGameStatus(GameStatus.not_started);
         g.setRounds(rounds);
         g.setActualRound(rounds.get(0));
+        
+        g.setPlayer1Name("Spieler");
+        g.setPlayer2Name("Computer");
 
         //log.log(Level.SEVERE, g.getActualRound().getCategory().getName());
 

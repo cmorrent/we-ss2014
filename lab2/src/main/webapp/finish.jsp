@@ -1,3 +1,5 @@
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
+<% Game game = (Game) session.getAttribute("game"); %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -30,11 +32,11 @@
             <section id="roundinfo" aria-labelledby="roundinfoheading">
                 <h2 id="roundinfoheading" class="accessibility">Spielerinformationen</h2>
                 <div id="player1info" class="playerinfo">
-                    <span id="player1name" class="playername">Spieler 1</span>
+                    <span id="player1name" class="playername"><%= game.getPlayer1Name() %></span>
                     <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
-                    <span id="player2name" class="playername">Spieler 2</span>
+                    <span id="player2name" class="playername"><%= game.getPlayer2Name() %></span>
                     <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
                 </div>
                 <a id="next" href="question.jsp" accesskey="n">Neues Spiel</a>
@@ -42,7 +44,7 @@
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">Â© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">© 2014 BIG Quiz</footer>
         
         <script type="text/javascript">
             //<![CDATA[

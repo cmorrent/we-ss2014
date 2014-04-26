@@ -1,3 +1,5 @@
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
+<% Game game = (Game) session.getAttribute("game"); %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -30,7 +32,7 @@
             <section id="roundinfo" aria-labelledby="roundinfoheading">
                 <h2 id="roundinfoheading" class="accessibility">Spielerinformationen</h2>
                 <div id="player1info" class="playerinfo">
-                    <span id="player1name" class="playername">Spieler 1</span>
+                    <span id="player1name" class="playername"><%= game.getPlayer1Name() %></span>
                     <ul class="playerroundsummary">
                         <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class="correct">Richtig</span></li>
                         <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
@@ -39,7 +41,7 @@
                     <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
-                    <span id="player2name" class="playername">Spieler 2</span>
+                    <span id="player2name" class="playername"><%= game.getPlayer2Name() %></span>
                     <ul class="playerroundsummary">
                         <li><span class="accessibility">Frage 1:</span><span id="player2answer1" class="correct">Richtig</span></li>
                         <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class="correct">Richtig</span></li>
@@ -52,6 +54,6 @@
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">Â© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">© 2014 BIG Quiz</footer>
     </body>
 </html>

@@ -28,7 +28,7 @@
             <section id="roundinfo" aria-labelledby="roundinfoheading">
                 <h2 id="roundinfoheading" class="accessibility">Spielerinformationen</h2>
                 <div id="player1info">
-                    <span id="player1name">Spieler 1</span>
+                    <span id="player1name"><%= game.getPlayer1Name() %></span>
                     <ul class="playerroundsummary">
                         <li><span class="accessibility">Frage 1:</span><span id="player1answer1" class="correct">Richtig</span></li>
                         <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
@@ -36,7 +36,7 @@
                     </ul>
                 </div>
                 <div id="player2info">
-                    <span id="player2name">Spieler 2</span>
+                    <span id="player2name"><%= game.getPlayer2Name() %></span>
                     <ul class="playerroundsummary">
                         <li><span class="accessibility">Frage 1:</span><span id="player2answer1" class="correct">Richtig</span></li>
                         <li><span class="accessibility">Frage 2:</span><span id="player2answer2" class="correct">Richtig</span></li>
@@ -88,7 +88,7 @@
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">Â© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">© 2014 BIG Quiz</footer>
         
         <script type="text/javascript">
             //<![CDATA[
