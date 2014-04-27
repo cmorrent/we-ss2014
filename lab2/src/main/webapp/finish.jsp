@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
 <% Game game = (Game) session.getAttribute("game"); %>
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
     <head>
@@ -44,7 +44,7 @@
         </section>
 
         <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        <footer role="contentinfo">Â© 2014 BIG Quiz</footer>
         
         <script type="text/javascript">
             //<![CDATA[
