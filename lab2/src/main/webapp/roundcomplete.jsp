@@ -54,11 +54,11 @@
                     <ul class="playerroundsummary">
                         <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
                         	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i+1 %>"
-                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
+                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_correct) { %>
                         		class="correct">Richtig	
-                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_failed) { %>
                         		class="incorrect">Falsch
-                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.open) { %>
+                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.open) { %>
                         		class="unknown">Unbekannt
                         	<% } %>	
                         	</span></li>
