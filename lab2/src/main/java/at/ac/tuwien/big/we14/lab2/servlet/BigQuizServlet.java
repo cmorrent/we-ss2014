@@ -25,9 +25,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BigQuizServlet extends HttpServlet{
 
+    private Logger log = Logger.getLogger(this.getClass().getName());
     private RequestToEventConverter requestToEventConverter;
     private GameService gameService;
     private RoundService roundService;
@@ -75,6 +78,7 @@ public class BigQuizServlet extends HttpServlet{
             displayPageEnum = DisplayPageEnum.error;
         }
 
+        log.log(Level.SEVERE, "Dispatch to page:" + getPageName(displayPageEnum));
         RequestDispatcher dispatcher = getServletContext()
                 .getRequestDispatcher(getPageName(displayPageEnum));
         dispatcher.forward(request, response);

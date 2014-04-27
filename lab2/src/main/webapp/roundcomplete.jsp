@@ -75,7 +75,14 @@
                     </ul>
                     <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds"><%= game.getPlayer2WonRounds() %></span></p>
                 </div>
-                <a id="next" href="question.jsp">Weiter</a>
+                <form id="form_action" method="post">
+                    <% if(game.getRounds().indexOf(game.getLastRound())+1 == 5){ %>
+                        <input id="action" name="action" type="hidden" value="action_gotoFinish" />
+                    <% }else{ %>
+                        <input id="action" name="action" type="hidden" value="action_nextQuestionRoundComplete" />
+                    <% } %>
+                    <a id="next" href="#" onclick="$('#form_action').submit();">Weiter</a>
+                </form>
             </section>
         </section>
 
