@@ -11,6 +11,7 @@ public class Round {
 
     private Category category;
 
+    private boolean roundSummaryShown;
     private List<Answer> answers;
 
     private Answer actualAnswer;
@@ -57,5 +58,13 @@ public class Round {
 
     public void setActualAnswer(Answer actualAnswer) {
         this.actualAnswer = actualAnswer;
+    }
+
+    public boolean getRoundSummaryShown(){
+        return this.roundSummaryShown;
+    };
+
+    public void setRoundSummaryShown(boolean shown){
+        this.roundSummaryShown = shown;
     }
 }

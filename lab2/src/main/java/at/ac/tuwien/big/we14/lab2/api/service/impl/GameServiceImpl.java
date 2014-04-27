@@ -21,8 +21,7 @@ import java.util.logging.Logger;
  */
 public class GameServiceImpl implements GameService{
 
-    private boolean roundComplete = false;
-    private boolean gameComplete = false;
+
 
     public final int CATEGORIES_PER_GAME_COUNT = 5;
 
@@ -92,11 +91,11 @@ public class GameServiceImpl implements GameService{
 
         if(correct){
             currentAnswer.setPlayer1AnswerStatus(AnswerStatus.answered_correct);
-            log.log(Level.SEVERE, "Right answer player 1" );
+            log.log(Level.SEVERE, "Right answer player 1");
         }
         else {
             currentAnswer.setPlayer1AnswerStatus(AnswerStatus.answered_failed);
-            log.log(Level.SEVERE, "Wrong answer player 1" );
+            log.log(Level.SEVERE, "Wrong answer player 1");
         }
 
         // answer Player 2
@@ -150,7 +149,7 @@ public class GameServiceImpl implements GameService{
                     }
                 }
             }
-            roundComplete = true;
+
 
             //check if game ended
             if (game.getRounds().indexOf(currentRound) >= game.getRounds().size() - 1){
@@ -169,7 +168,7 @@ public class GameServiceImpl implements GameService{
                 }
                 //finished
                 game.setActualRound(null);
-                gameComplete = true;
+
             }
             else {
 
@@ -229,17 +228,19 @@ public class GameServiceImpl implements GameService{
 
     @Override
     public boolean checkRoundComplete(Game game) {
-        if(roundComplete) {
-            roundComplete = false;
+        if(game.getActualRound() == null) {
             return true;
         }
-       return false;
+        if (game.getLastRound().getRoundStatus() != RoundStatus.open && ! game.getLastRound().getRoundSummaryShown()){
+            game.getLastRound().setRoundSummaryShown(true);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean checkFinish(Game game) {
-        if(gameComplete) {
-            gameComplete = false;
+        if (game.getGameStatus() == GameStatus.closed_player1Won || game.getGameStatus() == GameStatus.closed_player2Won || game.getGameStatus() == GameStatus.closed_tie){
             return true;
         }
         return false;
