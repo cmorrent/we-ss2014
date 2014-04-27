@@ -32,7 +32,7 @@
                     <span id="player1name"><%= game.getPlayer1Name() %></span>
                     <ul class="playerroundsummary">
                     	<% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
-                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player1answer<%= i+1 %>"
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player1answer<%= i %>"
                         	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
                         		class="correct">Richtig	
                         	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
@@ -48,7 +48,7 @@
                     <span id="player2name"><%= game.getPlayer2Name() %></span>
                     <ul class="playerroundsummary">
                         <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
-                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i+1 %>"
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i %>"
                         	<% if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_correct) { %>
                         		class="correct">Richtig	
                         	<% } if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_failed) { %>
@@ -81,7 +81,7 @@
                                        name="option<%= i %>"
                                        type="checkbox"
                                        value="<%= choice.getId()%>" />
-                                <label for="option<%= i %>"><%= choice.getText()%></label>
+                                <label id="labeloption<%= i %>" for="option<%= i %>"><%= choice.getText()%></label>
                             </li>
                         <% } %>
                     </ul>
@@ -89,6 +89,7 @@
                     <input id="action" name="action" type="hidden" value="action_question" />
                     <input id="timeleftvalue" type="hidden" value="100"/>
                     <input id="question_id" name="question_id" type="hidden" value="<%= game.getActualRound().getActualAnswer().getQuestion().getId() %>"/>
+                    <input id="questionid" name="questionid" type="hidden" value="<%= game.getActualRound().getActualAnswer().getQuestion().getId() %>"/>
                     <input id="next" type="submit" value="weiter" accesskey="s"/>
                 </form>
             </section>

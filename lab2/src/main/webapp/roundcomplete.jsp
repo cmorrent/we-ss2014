@@ -45,7 +45,7 @@
                     <span id="player1name" class="playername"><%= game.getPlayer1Name() %></span>
                     <ul class="playerroundsummary">
                         <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
-                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player1answer<%= i+1 %>"
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player1answer<%= i %>"
                         	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
                         		class="correct">Richtig	
                         	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
@@ -62,7 +62,7 @@
                     <span id="player2name" class="playername"><%= game.getPlayer2Name() %></span>
                     <ul class="playerroundsummary">
                         <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
-                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i+1 %>"
+                        	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i %>"
                         	<% if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_correct) { %>
                         		class="correct">Richtig	
                         	<% } if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_failed) { %>
