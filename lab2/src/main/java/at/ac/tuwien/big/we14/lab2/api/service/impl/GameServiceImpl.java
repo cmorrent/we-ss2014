@@ -36,20 +36,25 @@ public class GameServiceImpl implements GameService{
     @Override
     public Game createNewGameWithRandomQuestions() {
         Game g = new Game();
+        resetGame(g);
+        g.setGameStatus(GameStatus.not_started);
+
+        return g;
+    }
+
+    @Override
+    public void resetGame(Game game) {
         List<Category> randomCategories = randomPoolSelector.getRandomPoolWithSizeForList(CATEGORIES_PER_GAME_COUNT, categories);
         List<Round> rounds = roundService.createRoundsWithAnswersFromCategories(randomCategories);
 
-        g.setGameStatus(GameStatus.not_started);
-        g.setRounds(rounds);
-        g.setActualRound(rounds.get(0));
-        
-        g.setPlayer1Name("Spieler");
-        g.setPlayer2Name("Computer");
+        game.setGameStatus(GameStatus.not_started);
+        game.setRounds(rounds);
+        game.setActualRound(rounds.get(0));
 
-        //log.log(Level.SEVERE, g.getActualRound().getCategory().getName());
+        game.setGameStatus(GameStatus.open);
 
-
-        return g;
+        game.setPlayer1Name("Spieler");
+        game.setPlayer2Name("Computer");
     }
 
 

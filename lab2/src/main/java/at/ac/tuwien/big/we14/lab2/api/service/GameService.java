@@ -13,6 +13,8 @@ public interface GameService {
 
     public Game createNewGameWithRandomQuestions();
 
+    public void resetGame(Game game);
+
     public void startGame(Game game);
 
     public void updateGameWithChoices(Game game, List<Integer> choices);

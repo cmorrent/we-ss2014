@@ -22,6 +22,8 @@ public class RequestToEventConverterImpl implements RequestToEventConverter{
 
     public final String eventStringGotoFinish = "action_gotoFinish";
 
+    public final String eventStringRestart = "action_restart";
+
 
     @Override
     public Event render(HttpServletRequest request) throws InvalidInputException {
@@ -44,6 +46,8 @@ public class RequestToEventConverterImpl implements RequestToEventConverter{
             return Event.initWithEventType(EventType.gotoNextQuestionFromRoundComplete);
         }else if(action.equals(eventStringGotoFinish)){
            return Event.initWithEventType(EventType.gotoFinish);
+        }else if(action.equals(eventStringRestart)){
+            return Event.initWithEventType(EventType.restart);
         }else{
             throw new InvalidInputException("Invalid action: " + action);
         }

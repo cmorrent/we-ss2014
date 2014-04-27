@@ -48,7 +48,11 @@
                     <span id="player2name" class="playername"><%= game.getPlayer2Name() %></span>
                     <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds"><%= game.getPlayer2WonRounds() %></span></p>
                 </div>
-                <a id="next" href="question.jsp" accesskey="n">Neues Spiel</a>
+                <form id="form_action" method="post">
+                    <input id="action" name="action" type="hidden" value="action_restart" />
+                    <a id="next" href="#" onclick="$('#form_action').submit();">Neues Spiel</a>
+                </form>
+
             </section>
         </section>
 

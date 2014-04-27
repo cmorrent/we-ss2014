@@ -5,6 +5,7 @@ import at.ac.tuwien.big.we14.lab2.api.QuestionDataProvider;
 import at.ac.tuwien.big.we14.lab2.api.QuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.domain.DisplayPageEnum;
 import at.ac.tuwien.big.we14.lab2.api.domain.Game;
+import at.ac.tuwien.big.we14.lab2.api.domain.GameStatus;
 import at.ac.tuwien.big.we14.lab2.api.impl.ServletQuizFactory;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.Event.Event;
 import at.ac.tuwien.big.we14.lab2.api.inputLogic.Event.EventType;
@@ -105,9 +106,8 @@ public class BigQuizServlet extends HttpServlet{
 
 
     private void executeRestartEventOnGame(Event event, Game game){
-        if(event.getEventType() == EventType.restart){
-            game = gameService.createNewGameWithRandomQuestions();
-            gameService.startGame(game);
+        if(game.getGameStatus() != GameStatus.open){
+            gameService.resetGame(game);
         }
     }
 
