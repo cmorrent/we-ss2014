@@ -42,11 +42,11 @@
                 <h2 id="roundinfoheading" class="accessibility">Spielerinformationen</h2>
                 <div id="player1info" class="playerinfo">
                     <span id="player1name" class="playername"><%= game.getPlayer1Name() %></span>
-                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds">2</span></p>
+                    <p id="player1roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player1wonrounds" class="playerwonrounds"><%= game.getPlayer1WonRounds() %></span></p>
                 </div>
                 <div id="player2info" class="playerinfo">
                     <span id="player2name" class="playername"><%= game.getPlayer2Name() %></span>
-                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds">1</span></p>
+                    <p id="player2roundcounter" class="playerroundcounter">Gewonnene Runden: <span id="player2wonrounds" class="playerwonrounds"><%= game.getPlayer2WonRounds() %></span></p>
                 </div>
                 <a id="next" href="question.jsp" accesskey="n">Neues Spiel</a>
             </section>
