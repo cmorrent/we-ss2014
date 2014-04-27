@@ -88,7 +88,7 @@
                     <input id="answer_count" name="answer_count" value="<%= choices.size()%>" type="hidden"/>
                     <input id="action" name="action" type="hidden" value="action_question" />
                     <input id="timeleftvalue" type="hidden" value="100"/>
-                    <input id="question_id" name="question_id" type="hidden" value="2"/>
+                    <input id="question_id" name="question_id" type="hidden" value="<%= game.getActualRound().getActualAnswer().getQuestion().getId() %>"/>
                     <input id="next" type="submit" value="weiter" accesskey="s"/>
                 </form>
             </section>

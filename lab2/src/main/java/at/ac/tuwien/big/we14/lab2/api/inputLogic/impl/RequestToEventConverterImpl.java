@@ -68,7 +68,7 @@ public class RequestToEventConverterImpl implements RequestToEventConverter{
     public List<Integer> getAnswerIdListFromRequest(HttpServletRequest request)
             throws InvalidInputException {
 
-        int questionCount = parseIntFromParamerterString(request.getParameter("question_id"));
+        int questionCount = parseIntFromParamerterString(request.getParameter("answer_count"));
         List<Integer> answerList = new ArrayList<Integer>();
 
         for(int i = 0; i < questionCount; i++){
