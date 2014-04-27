@@ -55,4 +55,24 @@ public class Game {
     public String getPlayer2Name() {
     	return player2Name;
     }
+
+    public int getPlayer1WonRounds(){
+        int count = 0;
+        for (Round round : this.rounds){
+            if(round.getRoundStatus() == RoundStatus.closed_player1Won) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getPlayer2WonRounds(){
+        int count = 0;
+        for (Round round : this.rounds){
+            if(round.getRoundStatus() == RoundStatus.closed_player2Won) {
+                count++;
+            }
+        }
+        return count;
+    }
 }

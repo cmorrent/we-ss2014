@@ -68,6 +68,7 @@ public class GameServiceImpl implements GameService{
 
     @Override
     public void updateGameWithChoices(Game game, List<Integer> choices) {
+
         // check if answer is correct
         List<Choice> correctChoices = getActualQuestion(game).getCorrectChoices();
         boolean correct = true;
@@ -85,28 +86,107 @@ public class GameServiceImpl implements GameService{
 
         if(correct){
             game.getActualRound().getActualAnswer().setPlayer1AnswerStatus(AnswerStatus.answered_correct);
+            log.log(Level.SEVERE, "Right answer player 1" );
         }
         else {
             game.getActualRound().getActualAnswer().setPlayer1AnswerStatus(AnswerStatus.answered_failed);
+            log.log(Level.SEVERE, "Wrong answer player 1" );
         }
 
         // answer Player 2
         double rnd = Math.random();
         if (rnd < 0.5){
             game.getActualRound().getActualAnswer().setPlayer2AnswerStatus(AnswerStatus.answered_failed);
+            game.getActualRound().getActualAnswer().setPlayer2AnswerTimeInSeconds(15);
         }
         else {
             game.getActualRound().getActualAnswer().setPlayer2AnswerStatus(AnswerStatus.answered_correct);
+            game.getActualRound().getActualAnswer().setPlayer2AnswerTimeInSeconds(15);
         }
 
         if (checkRoundComplete(game)){
-            //TODO check who won the round and set correct status
+            // check who won the round and set correct status
+            int answersRightPlayer1 = 0;
+            int roundAnswerTimePlayer1 = 0;
+            int answersRightPlayer2 = 0;
+            int roundAnswerTimePlayer2 = 0;
+            for(Answer answer : game.getActualRound().getAnswers()){
+                if(answer.getPlayer1AnswerStatus() == AnswerStatus.answered_correct){
+                    answersRightPlayer1++;
+                    roundAnswerTimePlayer1 += answer.getPlayer1AnswerTimeInSeconds();
+                }
+                if (answer.getPlayer2AnswerStatus() == AnswerStatus.answered_correct){
+                    answersRightPlayer2++;
+                    roundAnswerTimePlayer2 += answer.getPlayer2AnswerTimeInSeconds();
+                }
+            }
+            log.log(Level.SEVERE, "Round ended: player1: " + answersRightPlayer1);
 
-            // TODO check if game ended
+            if (answersRightPlayer1 > answersRightPlayer2){
+                game.getActualRound().setRoundStatus(RoundStatus.closed_player1Won);
+            } else {
+                if (answersRightPlayer1 < answersRightPlayer2){
+                    game.getActualRound().setRoundStatus(RoundStatus.closed_player2Won);
+                }
+                else {
+                    // tie - comparing time now
+                    if (roundAnswerTimePlayer1 < roundAnswerTimePlayer2){
+                        game.getActualRound().setRoundStatus(RoundStatus.closed_player1Won);
+                    }
+                    else {
+                        if (roundAnswerTimePlayer1 > roundAnswerTimePlayer2){
+                            game.getActualRound().setRoundStatus(RoundStatus.closed_player2Won);
+                        }
+                        // time is tied - round ends in tie
+                        else {
+                            game.getActualRound().setRoundStatus(RoundStatus.closed_tie);
+                        }
+                    }
+                }
+            }
+
+            //check if game ended
+            if (checkFinish(game)){
+                int roundsPlayer1 = getRoundsWonPlayer1(game);
+                int roundsPlayer2 = getRoundsWonPlayer2(game);
+                if (roundsPlayer1 > roundsPlayer2 ){
+                    game.setGameStatus(GameStatus.closed_player1Won);
+                }
+                else {
+                    if (roundsPlayer1 < roundsPlayer2) {
+                        game.setGameStatus(GameStatus.closed_player2Won);
+                    }
+                    else {
+                        game.setGameStatus(GameStatus.closed_tie);
+                    }
+                }
+            }
+            else {
+                // New round - set round and first answer of round
+                Iterator<Round> roundIterator = game.getRounds().iterator();
+                while(!roundIterator.next().equals((game.getActualRound()))){
+                }
+                game.setActualRound(roundIterator.next());
+                game.getActualRound().setActualAnswer(game.getActualRound().getAnswers().get(0));
+            }
+
         }
+        // round not completed
+        else{
+            Iterator<Answer> answerIterator = game.getActualRound().getAnswers().iterator();
+            while(!answerIterator.next().equals(game.getActualRound().getActualAnswer())){
+
+            }
+            game.getActualRound().setActualAnswer(answerIterator.next());
+        }
+
+        log.log(Level.SEVERE, "next question!" );
+        log.log(Level.SEVERE, "go to Round: " + (game.getRounds().indexOf(game.getActualRound())+1) + ", answer: "
+        + (game.getActualRound().getAnswers().indexOf(game.getActualRound().getActualAnswer())+1));
 
 
     }
+
 
     public int getRoundsWonPlayer1(Game game){
         int roundsWon = 0;
@@ -154,7 +234,7 @@ public class GameServiceImpl implements GameService{
 
     @Override
     public boolean checkFinish(Game game) {
-        if (game.getRounds().indexOf(game.getActualRound()) >= 4 && game.getActualRound().getRoundStatus() != RoundStatus.open){
+        if (game.getRounds().indexOf(game.getActualRound()) >= 4 ){
             return true;
         }
         return false;
