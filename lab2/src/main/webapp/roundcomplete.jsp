@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.Game" %>
 <%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.AnswerStatus" %>
+<%@ page import="at.ac.tuwien.big.we14.lab2.api.domain.RoundStatus" %>
 <% Game game = (Game) session.getAttribute("game"); %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
@@ -26,7 +27,15 @@
             <!-- winner message -->
             <section id="roundwinner" aria-labelledby="roundwinnerheading">
                 <h2 id="roundwinnerheading" class="accessibility">Rundenzwischenstand</h2>
-                <p class="roundwinnermessage">Spieler 2 gewinnt Runde 1!</p>
+                <p class="roundwinnermessage">
+                <% if(game.getActualRound().getRoundStatus() == RoundStatus.closed_player1Won) { %>
+                	<%= game.getPlayer1Name() %> gewinnt Runde <%= game.getRounds().indexOf(game.getActualRound())+1 %>
+                <% } if(game.getActualRound().getRoundStatus() == RoundStatus.closed_player2Won) { %>
+                	<%= game.getPlayer2Name() %> gewinnt Runde <%= game.getRounds().indexOf(game.getActualRound())+1 %>
+                <% } if(game.getActualRound().getRoundStatus() == RoundStatus.closed_tie) { %>
+                	Runde <%= game.getRounds().indexOf(game.getActualRound())+1 %> geht unentschieden aus
+                <% } %>			
+                !</p>
             </section>
         
             <!-- round info -->    
