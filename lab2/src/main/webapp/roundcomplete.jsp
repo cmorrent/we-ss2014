@@ -28,12 +28,12 @@
             <section id="roundwinner" aria-labelledby="roundwinnerheading">
                 <h2 id="roundwinnerheading" class="accessibility">Rundenzwischenstand</h2>
                 <p class="roundwinnermessage">
-                <% if(game.getActualRound().getRoundStatus() == RoundStatus.closed_player1Won) { %>
-                	<%= game.getPlayer1Name() %> gewinnt Runde <%= game.getRounds().indexOf(game.getActualRound())+1 %>
-                <% } if(game.getActualRound().getRoundStatus() == RoundStatus.closed_player2Won) { %>
-                	<%= game.getPlayer2Name() %> gewinnt Runde <%= game.getRounds().indexOf(game.getActualRound())+1 %>
-                <% } if(game.getActualRound().getRoundStatus() == RoundStatus.closed_tie) { %>
-                	Runde <%= game.getRounds().indexOf(game.getActualRound())+1 %> geht unentschieden aus
+                <% if(game.getLastRound().getRoundStatus() == RoundStatus.closed_player1Won) { %>
+                	<%= game.getPlayer1Name() %> gewinnt Runde <%= game.getRounds().indexOf(game.getLastRound())+1 %>
+                <% } if(game.getLastRound().getRoundStatus() == RoundStatus.closed_player2Won) { %>
+                	<%= game.getPlayer2Name() %> gewinnt Runde <%= game.getRounds().indexOf(game.getLastRound())+1 %>
+                <% } if(game.getLastRound().getRoundStatus() == RoundStatus.closed_tie) { %>
+                	Runde <%= game.getRounds().indexOf(game.getLastRound())+1 %> geht unentschieden aus
                 <% } %>			
                 !</p>
             </section>
@@ -44,13 +44,13 @@
                 <div id="player1info" class="playerinfo">
                     <span id="player1name" class="playername"><%= game.getPlayer1Name() %></span>
                     <ul class="playerroundsummary">
-                        <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
+                        <% for(int i = 0; i < game.getLastRound().getAnswers().size(); i++) { %>
                         	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player1answer<%= i %>"
-                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
+                        	<% if(game.getLastRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_correct) { %>
                         		class="correct">Richtig	
-                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
+                        	<% } if(game.getLastRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.answered_failed) { %>
                         		class="incorrect">Falsch
-                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.open) { %>
+                        	<% } if(game.getLastRound().getAnswers().get(i).getPlayer1AnswerStatus() == AnswerStatus.open) { %>
                         		class="unknown">Unbekannt
                         	<% } %>	
                         	</span></li>
@@ -61,13 +61,13 @@
                 <div id="player2info" class="playerinfo">
                     <span id="player2name" class="playername"><%= game.getPlayer2Name() %></span>
                     <ul class="playerroundsummary">
-                        <% for(int i = 0; i < game.getActualRound().getAnswers().size(); i++) { %>
+                        <% for(int i = 0; i < game.getLastRound().getAnswers().size(); i++) { %>
                         	<li><span class="accessibility">Frage <%= i+1 %>:</span><span id="player2answer<%= i %>"
-                        	<% if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_correct) { %>
+                        	<% if(game.getLastRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_correct) { %>
                         		class="correct">Richtig	
-                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_failed) { %>
+                        	<% } if(game.getLastRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.answered_failed) { %>
                         		class="incorrect">Falsch
-                        	<% } if(game.getActualRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.open) { %>
+                        	<% } if(game.getLastRound().getAnswers().get(i).getPlayer2AnswerStatus() == AnswerStatus.open) { %>
                         		class="unknown">Unbekannt
                         	<% } %>	
                         	</span></li>

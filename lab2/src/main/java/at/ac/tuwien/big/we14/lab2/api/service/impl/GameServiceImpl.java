@@ -168,6 +168,7 @@ public class GameServiceImpl implements GameService{
                     }
                 }
                 //finished
+                game.setActualRound(null);
                 gameComplete = true;
             }
             else {
@@ -183,9 +184,7 @@ public class GameServiceImpl implements GameService{
             currentRound.setActualAnswer(currentRound.getAnswers().get(currentRound.getAnswers().indexOf(currentAnswer)+1));
         }
 
-        log.log(Level.SEVERE, "next question!" );
-        log.log(Level.SEVERE, "go to Round: " + (game.getRounds().indexOf(game.getActualRound())+1) + ", answer: "
-        + (game.getActualRound().getAnswers().indexOf(game.getActualRound().getActualAnswer())+1));
+
 
 
     }

@@ -11,6 +11,7 @@ public class Game {
     private GameStatus gameStatus;
 
     private Round actualRound;
+
     
     private String player1Name;
     private String player2Name;
@@ -74,5 +75,15 @@ public class Game {
             }
         }
         return count;
+    }
+
+    public Round getLastRound(){
+        if(rounds.indexOf(actualRound)== 0){
+            return actualRound;
+        }
+        if (actualRound == null){
+            return rounds.get(4);
+        }
+        return rounds.get(rounds.indexOf(actualRound)-1);
     }
 }
