@@ -5,6 +5,8 @@
 # Home page
 GET        /                    controllers.Application.index()
 GET        /authentication      controllers.UserManagement.getAuthentication()
+GET        /registration        controllers.UserManagement.getRegistration()
+POST       /login               controllers.UserManagement.authenticate()
 
 # Map static resources from the /public folder to the /assets URL path
 GET        /assets/*file        controllers.Assets.at(path="/public", file)
