@@ -1,6 +1,6 @@
-@(title: String)
+@(myForm: Form[model.Users])
 
-@main(title){
+@main(""){
         <body id="registerpage">
             <a class="accessibility" href="#register">Zur Registrierung springen</a>
             <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">Business Informatics Group</span> Quiz</h1></header>
@@ -13,39 +13,30 @@
             <section role="main" id="register" aria-labelledby="registerheading">
                 <!-- Register section -->
                 <h2 id="registerheading" class="accessibility">Registrierung</h2>
-                <form action="register.html" method="post">
+                @helper.form(action = routes.UserManagement.saveUser) {
                     <fieldset>
                         <legend>Persönliche Daten</legend>
+                        <!--
                         <label for="firstname">Vorname:</label>
                         <input id="firstname" type="text" name="firstName"/>
-
-                        <label for="lastname">Nachname:</label>
-                        <input id="lastname" type="text" name="lastName"/>
-
-                        <label for="birthdate">Geburtstag:</label>
-                        <input id="birthdate" type="date" name="birthDate"/>
-                        <div id="error_msg_birthdate" class="hide" role="alert">Verwenden Sie bitte folgendes Datumsformat: dd.mm.yyyy (z.B. 24.12.2012).</div>
-
-                        <label for="gender">Geschlecht:</label>
-                        <select id="gender" name="gender">
-                            <option value="m">Männlich</option>
-                            <option value="f">Weiblich</option>
-                        </select>
+                        -->
+                        @helper.inputText(myForm("Firstname"))
+                        @helper.inputText(myForm("Lastname"))
+                        @helper.inputDate(myForm("Birthday"))
+                        @helper.select(myForm("Gender"),
+                            options = Seq("male"->"Male", "felmale"->"Female")
+                        )
                     </fieldset>
                     <fieldset>
                         <legend>Login Daten</legend>
-                        <label for="username">Benutzername*:</label>
-                        <input id="username" type="text" required="required" pattern="\w{4,8}" name="userName"/>
-                        <div id="error_msg_username" class="hide" role="alert">Der Benutzername muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.</div>
-
-                        <label for="password">Passwort*:</label>
-                        <input id="password" type="password" required="required" pattern="\w{4,8}" name="password"/>
-                        <div id="error_msg_password" class="hide" role="alert">Das Passwort muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.</div>
-                        <input id="registersubmit" type="submit" value="Registrieren" accesskey="s"/>
-                        <p id="requiredhint">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
+                        @helper.inputText(myForm("Username"))
+                        @helper.inputPassword(myForm("Password"))
+                        @helper.inputPassword(myForm("PasswordConfirm"))
                     </fieldset>
-                </form>
+
+                }
             </section>
+
 
             <!-- footer -->
             <footer role="contentinfo">© 2014 BIG Quiz</footer>

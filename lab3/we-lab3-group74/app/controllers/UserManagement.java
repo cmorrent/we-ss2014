@@ -17,15 +17,21 @@ import javax.persistence.NoResultException;
  */
 public class UserManagement extends Controller {
 
+
     public static Result getAuthentication(){
-        return ok(authentication.render(""));
+        return ok(authentication.render());
     }
 
 
     public static Result getRegistration(){
-        return ok(registration.render(""));
+        return ok(registration.render(Form.form(Users.class)));
     }
 
+
+    public static Result saveUser(){
+        return ok("TEST");
+    }
+    /*s
     public static Result authenticate() {
         Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
         return ok();
@@ -44,11 +50,13 @@ public class UserManagement extends Controller {
         public String password;
     }
 
+
     public static Result login() {
         return ok(
                 login.render(Form.form(Login.class))
         );
     }
+    */
 
     public static Result postRegistrationData(){
         return ok("TEST");
