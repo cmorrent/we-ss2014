@@ -37,5 +37,6 @@ nav.link.login.value = Login
 nav.link.login.description = Click here to login
 nav.link.register.value = Register
 nav.link.register.description = Click here to register
+nav.link.logout.value = Logout
 
 footer.title = © 2014 BIG Quiz

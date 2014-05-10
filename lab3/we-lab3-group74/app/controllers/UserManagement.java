@@ -49,6 +49,11 @@ public class UserManagement extends Controller {
         session("user", user.getName());
     }
 
+    public static Result logout() {
+        session().clear();
+        return redirect(routes.UserManagement.getAuthentication());
+    }
+
 
     public static Result getRegistration(){
         return ok(registration.render(Form.form(Users.class), ""));

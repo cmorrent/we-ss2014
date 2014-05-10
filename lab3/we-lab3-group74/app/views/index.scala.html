@@ -1,16 +1,14 @@
 ﻿@main("Business Informatics Group Quiz - Start"){
-    <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">Business Informatics Group</span> Quiz</h1></header>
-    <nav role="navigation" aria-labelledby="navheading">
-        <h2 id="navheading" class="accessibility">Navigation</h2>
-        <ul>
-            <li><a id="logoutlink" href="#">Abmelden</a></li>
-        </ul>
-    </nav>
+
+    @header()
+
+    @navigation{
+        <li><a id="logoutlink" href="logout">@Messages("nav.link.logout.value")</a></li>
+    }
         
     <section role="main" id="quiz">
         <a id="startgame" href="question.html">Quiz starten</a>
     </section>
 
-    <!-- footer -->
-    <footer role="contentinfo">© 2014 BIG Quiz</footer>
+    @footer()
 }

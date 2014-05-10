@@ -6,6 +6,7 @@
 GET        /                      controllers.Application.index()
 GET        /index                 controllers.Game.getIndex()
 GET        /authentication        controllers.UserManagement.getAuthentication()
+GET        /logout                controllers.UserManagement.logout()
 
 GET        /registration          controllers.UserManagement.getRegistration()
 POST       /registration          controllers.UserManagement.saveUser()
