@@ -34,9 +34,6 @@ public class Users implements User {
     private String password;
 
     @Transient
-    @Constraints.Required
-    @Constraints.MinLength(4)
-    @Constraints.MaxLength(8)
     private String passwordConfirm;
 
     private String firstname;

@@ -24,6 +24,25 @@ public class UserManagement extends Controller {
         return ok(authentication.render(Form.form(Users.class), ""));
     }
 
+    @Transactional
+    public static Result authenticate() {
+        Form<Users> form = Form.form(Users.class).bindFromRequest();
+
+        if(form.hasErrors()){
+            return badRequest(authentication.render(form, "a"));
+        }else {
+            Users tmpUser = form.get();
+            Users user = getUserForUsernameAndPassword(tmpUser.getName(), tmpUser.getPassword());
+
+            if (user == null) {
+                String errorMsg = "Username or password not correct";
+                return badRequest(authentication.render(form, errorMsg));
+            } else {
+                return ok("TEST");
+            }
+        }
+    }
+
 
     public static Result getRegistration(){
         return ok(registration.render(Form.form(Users.class), ""));
@@ -51,11 +70,6 @@ public class UserManagement extends Controller {
         }
     }
 
-    public static Result authenticate() {
-        //Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
-        return ok("TEST");
-    }
-
 
     /*s
     public String validate() {
@@ -81,6 +95,16 @@ public class UserManagement extends Controller {
 
     public static Result postRegistrationData(){
         return ok("TEST");
+    }
+
+    private static Users getUserForUsernameAndPassword(String username, String password){
+        Users user = getUserForUsername(username);
+        if((user != null)
+          && (user.getPassword().equals(password))){
+            return user;
+        }else{
+            return null;
+        }
     }
 
     @Transactional
