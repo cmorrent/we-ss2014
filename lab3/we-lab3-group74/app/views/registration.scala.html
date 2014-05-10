@@ -20,20 +20,34 @@
                         <label for="firstname">Vorname:</label>
                         <input id="firstname" type="text" name="firstName"/>
                         -->
-                        @helper.inputText(myForm("Firstname"))
-                        @helper.inputText(myForm("Lastname"))
-                        @helper.inputDate(myForm("Birthday"))
-                        @helper.select(myForm("Gender"),
-                            options = Seq("male"->"Male", "felmale"->"Female")
+                        @helper.inputText(myForm("firstname"),
+                            '_label->"Firstname"
+                        )
+                        @helper.inputText(myForm("lastname"),
+                            '_label->"Lastname"
+                        )
+                        @helper.inputDate(myForm("birthday"),
+                            '_label->"Birthday"
+                        )
+                        @helper.select(myForm("gender"),
+                            options = Seq("male"->"Male", "felmale"->"Female"),
+                            '_label->"Gender"
                         )
                     </fieldset>
                     <fieldset>
                         <legend>Login Daten</legend>
-                        @helper.inputText(myForm("Username"))
-                        @helper.inputPassword(myForm("Password"))
-                        @helper.inputPassword(myForm("PasswordConfirm"))
+                        @helper.inputText(myForm("name"),
+                            '_label->"Username"
+                        )
+                        @helper.inputPassword(myForm("password"),
+                            '_label->"Password"
+                        )
+                        @helper.inputPassword(myForm("passwordConfirm"),
+                            '_label->"PasswordConfirm"
+                        )
+                        <input id="registersubmit" type="submit" value="Registrieren" accesskey="s"/>
+                        <p id="requiredhint">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
                     </fieldset>
-
                 }
             </section>
 

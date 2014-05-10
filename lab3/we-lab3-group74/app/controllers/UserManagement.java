@@ -29,7 +29,9 @@ public class UserManagement extends Controller {
 
 
     public static Result saveUser(){
-        return ok("TEST");
+        Form<Users> form = Form.form(Users.class).bindFromRequest();
+        Users user = form.get();
+        return ok("TEST" + user.getName());
     }
     /*s
     public static Result authenticate() {

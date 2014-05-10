@@ -24,7 +24,6 @@ public class Users implements User {
     @Id
     private String name;
 
-
     private String password;
 
     private String firstname;
@@ -33,7 +32,11 @@ public class Users implements User {
 
     private Date birthday;
 
-    private Gender female;
+    private Gender gender;
+
+    @Transient
+    private String passwordConfirm;
+
 
     public String getName() {
         return name;
@@ -75,11 +78,19 @@ public class Users implements User {
         this.birthday = birthday;
     }
 
-    public Gender getFemale() {
-        return female;
+    public Gender getGender() {
+        return gender;
     }
 
-    public void setFemale(Gender female) {
-        this.female = female;
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
     }
 }
