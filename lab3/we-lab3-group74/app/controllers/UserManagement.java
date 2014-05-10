@@ -38,9 +38,15 @@ public class UserManagement extends Controller {
                 String errorMsg = "Username or password not correct";
                 return badRequest(authentication.render(form, errorMsg));
             } else {
-                return ok("TEST");
+                authenticateUser(user);
+                return redirect(routes.Game.getIndex());
             }
         }
+    }
+
+    private static void authenticateUser(Users user){
+        session().clear();
+        session("user", user.getName());
     }
 
 
@@ -69,29 +75,6 @@ public class UserManagement extends Controller {
             }
         }
     }
-
-
-    /*s
-    public String validate() {
-        if (User.authenticate(email, password) == null) {
-            return "Invalid user or password";
-        }
-        return null;
-    }
-
-    public static class Login {
-
-        public String username;
-        public String password;
-    }
-
-
-    public static Result login() {
-        return ok(
-                login.render(Form.form(Login.class))
-        );
-    }
-    */
 
     public static Result postRegistrationData(){
         return ok("TEST");

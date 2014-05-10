@@ -4,6 +4,7 @@
 
 # Home page
 GET        /                      controllers.Application.index()
+GET        /index                 controllers.Game.getIndex()
 GET        /authentication        controllers.UserManagement.getAuthentication()
 
 GET        /registration          controllers.UserManagement.getRegistration()
