@@ -3,13 +3,13 @@
 @main(""){
     <body id="loginpage">
         <a class="accessibility" href="#login">Zum Login springen</a>
-        <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">Business Informatics Group</span> Quiz</h1></header>
-        <nav role="navigation" aria-labelledby="navheading">
-            <h2 id="navheading" class="accessibility">Navigation</h2>
-            <ul>
-                <li><a id="registerlink" title="Klicke hier um dich zu registrieren" href="register.html" accesskey="r">Registrieren</a></li>
-            </ul>
-        </nav>
+
+        @header()
+
+        @navigation{
+            <li><a id="registerlink" title="Klicke hier um dich zu registrieren" href="register.html" accesskey="r">Registrieren</a></li>
+        }
+
         <!-- Login section -->
         <section role="main">
             <section id="login" aria-labelledby="loginheading">

@@ -4,16 +4,11 @@
         <body id="registerpage">
             <a class="accessibility" href="#register">@Messages("registration.navlink.register.value")</a>
 
-            <header role="banner" aria-labelledby="mainheading">
-                <h1 id="mainheading"><span class="accessibility">@Messages("header.accessability")</span> @Messages("header.title")</h1>
-            </header>
+            @header()
 
-            <nav role="navigation" aria-labelledby="navheading">
-                <h2 id="navheading" class="accessibility">@Messages("nav.title")</h2>
-                <ul>
-                    <li><a id="loginlink" title="@Messages("nav.link.login.description")" href="#" accesskey="l">@Messages("nav.link.login.value")</a></li>
-                </ul>
-            </nav>
+            @navigation{
+                <li><a id="loginlink" title="@Messages("nav.link.login.description")" href="#" accesskey="l">@Messages("nav.link.login.value")</a></li>
+            }
 
             <section role="main" id="register" aria-labelledby="registerheading">
                 <!-- Register section -->
