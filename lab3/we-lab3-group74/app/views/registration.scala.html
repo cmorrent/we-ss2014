@@ -1,4 +1,4 @@
-@(myForm: Form[model.Users])
+@(myForm: Form[model.Users])(errorMessage: String)
 
 @main(""){
         <body id="registerpage">
@@ -37,16 +37,20 @@
                     <fieldset>
                         <legend>Login Daten</legend>
                         @helper.inputText(myForm("name"),
-                            '_label->"Username"
+                            '_label->"Username*",
+                            '_showConstraints->false
                         )
                         @helper.inputPassword(myForm("password"),
-                            '_label->"Password"
+                            '_label->"Password*",
+                            '_showConstraints->false
                         )
                         @helper.inputPassword(myForm("passwordConfirm"),
-                            '_label->"PasswordConfirm"
+                            '_label->"PasswordConfirm*",
+                            '_showConstraints->false
                         )
                         <input id="registersubmit" type="submit" value="Registrieren" accesskey="s"/>
                         <p id="requiredhint">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
+                        <p>@errorMessage</p>
                     </fieldset>
                 }
             </section>

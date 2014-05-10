@@ -24,14 +24,23 @@ public class UserManagement extends Controller {
 
 
     public static Result getRegistration(){
-        return ok(registration.render(Form.form(Users.class)));
+        return ok(registration.render(Form.form(Users.class), ""));
     }
 
 
     public static Result saveUser(){
         Form<Users> form = Form.form(Users.class).bindFromRequest();
-        Users user = form.get();
-        return ok("TEST" + user.getName());
+
+        if(form.hasErrors()){
+            return badRequest(registration.render(form, ""));
+        }else{
+            Users user = form.get();
+            if(user.getPassword().equals(user.getPasswordConfirm())){
+                return ok("TEST" + user.getName());
+            }else{
+                return badRequest(registration.render(form, "Password confirmaion is invalid!"));
+            }
+        }
     }
     /*s
     public static Result authenticate() {

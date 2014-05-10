@@ -1,6 +1,7 @@
 package model;
 
 import at.ac.tuwien.big.we14.lab2.api.User;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -22,9 +23,21 @@ import java.util.Date;
 public class Users implements User {
 
     @Id
+    @Constraints.Required
+    @Constraints.MinLength(4)
+    @Constraints.MaxLength(8)
     private String name;
 
+    @Constraints.Required
+    @Constraints.MinLength(4)
+    @Constraints.MaxLength(8)
     private String password;
+
+    @Transient
+    @Constraints.Required
+    @Constraints.MinLength(4)
+    @Constraints.MaxLength(8)
+    private String passwordConfirm;
 
     private String firstname;
 
@@ -33,9 +46,6 @@ public class Users implements User {
     private Date birthday;
 
     private Gender gender;
-
-    @Transient
-    private String passwordConfirm;
 
 
     public String getName() {
