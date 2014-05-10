@@ -2,50 +2,58 @@
 
 @main(""){
         <body id="registerpage">
-            <a class="accessibility" href="#register">Zur Registrierung springen</a>
-            <header role="banner" aria-labelledby="mainheading"><h1 id="mainheading"><span class="accessibility">Business Informatics Group</span> Quiz</h1></header>
+            <a class="accessibility" href="#register">@Messages("registration.navlink.register.value")</a>
+
+            <header role="banner" aria-labelledby="mainheading">
+                <h1 id="mainheading"><span class="accessibility">@Messages("header.accessability")</span> @Messages("header.title")</h1>
+            </header>
+
             <nav role="navigation" aria-labelledby="navheading">
-                <h2 id="navheading" class="accessibility">Navigation</h2>
+                <h2 id="navheading" class="accessibility">@Messages("nav.title")</h2>
                 <ul>
-                    <li><a id="loginlink" title="Klicke hier um dich anzumelden" href="#" accesskey="l">Anmelden</a></li>
+                    <li><a id="loginlink" title="@Messages("nav.link.login.description")" href="#" accesskey="l">@Messages("nav.link.login.value")</a></li>
                 </ul>
             </nav>
+
             <section role="main" id="register" aria-labelledby="registerheading">
                 <!-- Register section -->
                 <h2 id="registerheading" class="accessibility">Registrierung</h2>
                 @helper.form(action = routes.UserManagement.saveUser) {
                     <fieldset>
-                        <legend>Persösnliche Daten</legend>
+                        <legend>@Messages("registration.head.personalData")</legend>
                         @helper.inputText(myForm("firstname"),
                             '_label->Messages("user.firstname")
                         )
                         @helper.inputText(myForm("lastname"),
-                            '_label->"Lastname"
+                            '_label->Messages("user.lastname")
                         )
                         @helper.inputDate(myForm("birthday"),
-                            '_label->"Birthday"
+                            '_label->Messages("user.birthday")
                         )
                         @helper.select(myForm("gender"),
-                            options = Seq("male"->"Male", "felmale"->"Female"),
-                            '_label->"Gender"
+                            options = Seq(
+                                "male"->Messages("gender.male"),
+                                "felmale"->Messages("gender.female")
+                            ),
+                            '_label->Messages("user.gender")
                         )
                     </fieldset>
                     <fieldset>
-                        <legend>Login Daten</legend>
+                        <legend>@Messages("registration.head.loginData")</legend>
                         @helper.inputText(myForm("name"),
-                            '_label->"Username*",
+                            '_label->Messages("user.username"),
                             '_showConstraints->false
                         )
                         @helper.inputPassword(myForm("password"),
-                            '_label->"Password*",
+                            '_label->Messages("user.password"),
                             '_showConstraints->false
                         )
                         @helper.inputPassword(myForm("passwordConfirm"),
-                            '_label->"PasswordConfirm*",
+                            '_label->Messages("user.passwordConfirm"),
                             '_showConstraints->false
                         )
-                        <input id="registersubmit" type="submit" value="Registrieren" accesskey="s"/>
-                        <p id="requiredhint">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
+                        <input id="registersubmit" type="submit" value="@Messages("registration.button.register")" accesskey="s"/>
+                        <p id="requiredhint">@Messages("registration.requiredhint")</p>
                         <p>@errorMessage</p>
                     </fieldset>
                 }

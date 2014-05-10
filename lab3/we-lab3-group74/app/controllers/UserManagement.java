@@ -1,8 +1,10 @@
 package controllers;
 
 import model.Users;
+import play.api.i18n.Lang;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
+import play.i18n.Messages;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.authentication;
@@ -38,7 +40,8 @@ public class UserManagement extends Controller {
             if(user.getPassword().equals(user.getPasswordConfirm())){
                 return ok("TEST" + user.getName());
             }else{
-                return badRequest(registration.render(form, "Password confirmaion is invalid!"));
+                String errorMessage = Messages.get("registration.errormessage.passwordConfirmationInvalid");
+                return badRequest(registration.render(form, errorMessage));
             }
         }
     }

@@ -1,1 +1,27 @@
-user.firstname = Firstnames
+##Model
+user.firstname = Firstname
+user.lastname = Lastname
+user.birthday = Birthday
+user.gender = Gender
+user.username = Username*
+user.password = Password*
+user.passwordConfirm = Password confirm*
+
+gender.male = Male
+gender.female = Female
+
+##Pages
+registration.head.personalData = Personal data
+registration.head.loginData = Login data
+registration.requiredhint = With "*" marked fields are required
+registration.button.register = Register
+registration.navlink.register.value = Jump to Registration
+registration.errormessage.passwordConfirmationInvalid = Password confirmaion is not valid!
+
+## Header Footer
+header.title = Quiz
+header.accessability = Business Informatics Group
+
+nav.title = Navigation
+nav.link.login.value = Login
+nav.link.login.description = Click here to login
