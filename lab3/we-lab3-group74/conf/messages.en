@@ -11,6 +11,7 @@ gender.male = Male
 gender.female = Female
 
 ##Pages
+registration.pagetitle = Business Informatics Group Quiz - Registration
 registration.accessability.title = Registration
 registration.head.personalData = Personal data
 registration.head.loginData = Login data
@@ -20,13 +21,15 @@ registration.navlink.register.value = Jump to registration
 registration.errormessage.passwordConfirmationInvalid = Password confirmaion is not valid!
 registration.errormessage.usernameAllreadyExists = Username already exists!
 
-
+authentication.pagetitle = Business Informatics Group Quiz - Login
 authentication.head.login = Login
 authentication.navlink.login.value = Jump to login
 authentication.accessability.head.registration = Registration
 authentication.p.notRegistered = Not Registered?
 authentication.link.Registration = Goto registration
 
+index.pagetitle = Business Informatics Group Quiz - Start
+index.link.start.value = Start Quiz
 
 ## Header Footer
 header.title = Quiz
