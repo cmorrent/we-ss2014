@@ -1,40 +1,41 @@
-
+@(myForm: Form[model.Users])(errorMessage: String)
 
 @main(""){
     <body id="loginpage">
-        <a class="accessibility" href="#login">Zum Login springen</a>
+        <a class="accessibility" href="#login">@Messages("authentication.navlink.login.value")</a>
 
         @header()
 
         @navigation{
-            <li><a id="registerlink" title="Klicke hier um dich zu registrieren" href="register.html" accesskey="r">Registrieren</a></li>
+            <li><a id="registerlink" title="@Messages("nav.link.register.description")" href="register.html" accesskey="r">@Messages("nav.link.register.value")</a></li>
         }
 
         <!-- Login section -->
         <section role="main">
             <section id="login" aria-labelledby="loginheading">
-                <form action="login.html" method="get">
-
+                @helper.form(action = routes.UserManagement.authenticate) {
                     <fieldset>
-                        <legend id="loginheading">Login</legend>
-                        <label for="username">Benutzername:</label>
-                        <input id="username" value="" type="text" required="required"/>
-                        <label for="password">Passwort:</label>
-                        <input id="password" type="password" required="required"/>
+                        <legend>@Messages("authentication.head.login")</legend>
+                        @helper.inputText(myForm("name"),
+                            '_label->Messages("user.username"),
+                            '_showConstraints->false
+                        )
+                        @helper.inputPassword(myForm("password"),
+                            '_label->Messages("user.password"),
+                            '_showConstraints->false
+                        )
                         <input id="loginsubmit" type="submit" value="Anmelden"/>
                     </fieldset>
-
-                </form>
+                }
             </section>
             <!-- Register section -->
             <section id="register" aria-labelledby="registerheading">
-                <h2 id="registerheading" class="accessibility">Registrierung</h2>
-                <p>Nicht registriert?</p>
-                <a href="registration">Zur Registierung</a>
+                <h2 id="registerheading" class="accessibility">@Messages("authentication.accessability.head.registration")</h2>
+                <p>@Messages("authentication.p.notRegistered")</p>
+                <a href="registration">@Messages("authentication.link.Registration")</a>
             </section>
         </section>
 
-        <!-- footer -->
-        <footer role="contentinfo">© 2014 BIG Quiz</footer>
+        @footer();
     </body>
 }

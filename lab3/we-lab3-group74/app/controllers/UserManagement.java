@@ -21,7 +21,7 @@ public class UserManagement extends Controller {
 
 
     public static Result getAuthentication(){
-        return ok(authentication.render());
+        return ok(authentication.render(Form.form(Users.class), ""));
     }
 
 
@@ -50,12 +50,14 @@ public class UserManagement extends Controller {
             }
         }
     }
-    /*s
+
     public static Result authenticate() {
-        Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
-        return ok();
+        //Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
+        return ok("TEST");
     }
 
+
+    /*s
     public String validate() {
         if (User.authenticate(email, password) == null) {
             return "Invalid user or password";

@@ -11,6 +11,7 @@ gender.male = Mann
 gender.female = Frau
 
 ## Pages
+registration.accessability.title = Registrierung
 registration.head.personalData = Persösnliche Daten
 registration.head.loginData =  Login Daten
 registration.requiredhint = Mit "*" gekennzeichnete Felder sind Pflichtfelder
@@ -19,6 +20,12 @@ registration.navlink.register.value = Zur Registrierung springen
 registration.errormessage.passwordConfirmationInvalid = Passwort bestätigung falsch!
 registration.errormessage.usernameAllreadyExists = Benutzer existiert bereits!
 
+authentication.head.login = Login
+authentication.navlink.login.value = Zum Login springen
+authentication.accessability.head.registration = Registrierung
+authentication.p.notRegistered = Nicht registriert?
+authentication.link.Registration = Zur Registierung
+
 ## Header Footer
 header.title = Quiz
 header.accessability = Business Informatics Group
@@ -26,3 +33,7 @@ header.accessability = Business Informatics Group
 nav.title = Navigation
 nav.link.login.value = Anmelden
 nav.link.login.description = Klicke hier um dich anzumelden
+nav.link.register.value = Registrieren
+nav.link.register.description = Klicke hier um dich zu registrieren
+
+footer.title = © 2014 BIG Quiz
