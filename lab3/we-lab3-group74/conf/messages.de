@@ -17,6 +17,7 @@ registration.requiredhint = Mit "*" gekennzeichnete Felder sind Pflichtfelder
 registration.button.register = Registrieren
 registration.navlink.register.value = Zur Registrierung springen
 registration.errormessage.passwordConfirmationInvalid = Passwort bestätigung falsch!
+registration.errormessage.usernameAllreadyExists = Benutzer existiert bereits!
 
 ## Header Footer
 header.title = Quiz

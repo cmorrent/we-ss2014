@@ -30,6 +30,7 @@ public class UserManagement extends Controller {
     }
 
 
+    @Transactional
     public static Result saveUser(){
         Form<Users> form = Form.form(Users.class).bindFromRequest();
 
@@ -37,11 +38,15 @@ public class UserManagement extends Controller {
             return badRequest(registration.render(form, ""));
         }else{
             Users user = form.get();
-            if(user.getPassword().equals(user.getPasswordConfirm())){
-                return ok("TEST" + user.getName());
-            }else{
+            if(!user.getPassword().equals(user.getPasswordConfirm())){
                 String errorMessage = Messages.get("registration.errormessage.passwordConfirmationInvalid");
                 return badRequest(registration.render(form, errorMessage));
+            }else if(usernameExists(user.getName())) {
+                String errorMessage = Messages.get("registration.errormessage.usernameAllreadyExists");
+                return badRequest(registration.render(form, errorMessage));
+            }else{
+                JPA.em().persist(user);
+                return redirect(routes.UserManagement.getAuthentication());
             }
         }
     }
@@ -76,6 +81,7 @@ public class UserManagement extends Controller {
         return ok("TEST");
     }
 
+    @Transactional
     private static boolean usernameExists(String username){
         if(getUserForUsername(username) != null){
             return true;

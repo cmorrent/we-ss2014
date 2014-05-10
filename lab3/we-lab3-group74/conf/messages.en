@@ -17,6 +17,7 @@ registration.requiredhint = With "*" marked fields are required
 registration.button.register = Register
 registration.navlink.register.value = Jump to Registration
 registration.errormessage.passwordConfirmationInvalid = Password confirmaion is not valid!
+registration.errormessage.usernameAllreadyExists = Username already exists!
 
 ## Header Footer
 header.title = Quiz
