@@ -11,6 +11,7 @@ import views.html.authentication;
 import views.html.registration;
 import static play.data.Form.*;
 import play.data.*;
+import play.cache.*;
 
 import javax.persistence.NoResultException;
 
@@ -47,6 +48,7 @@ public class UserManagement extends Controller {
     private static void authenticateUser(Users user){
         session().clear();
         session("user", user.getName());
+        Cache.set("user", user);
     }
 
     public static Result logout() {

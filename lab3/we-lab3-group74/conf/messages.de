@@ -31,6 +31,8 @@ authentication.link.Registration = Zur Registierung
 index.pagetitle = Business Informatics Group Quiz - Start
 index.link.start.value = Quiz starten
 
+quiz.pagetitle = Business Informatics Group Quiz
+
 ## Header Footer
 header.title = Quiz
 header.accessability = Business Informatics Group
