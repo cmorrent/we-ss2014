@@ -5,7 +5,7 @@ user.birthday = Geburtstag
 user.gender = Geschlecht
 user.username = Benutzername*
 user.password = Passwort*
-user.passwordConfirm = Passwort bestätigen*
+user.passwordConfirm = Passwort bestÃ¤tigen*
 
 gender.male = Mann
 gender.female = Frau
@@ -13,12 +13,12 @@ gender.female = Frau
 ## Pages
 registration.pagetitle = Business Informatics Group Quiz - Registrieren
 registration.accessability.title = Registrierung
-registration.head.personalData = Persösnliche Daten
+registration.head.personalData = PersÃ¶nliche Daten
 registration.head.loginData =  Login Daten
 registration.requiredhint = Mit "*" gekennzeichnete Felder sind Pflichtfelder
 registration.button.register = Registrieren
 registration.navlink.register.value = Zur Registrierung springen
-registration.errormessage.passwordConfirmationInvalid = Passwort bestätigung falsch!
+registration.errormessage.passwordConfirmationInvalid = Passwort BestÃ¤tigung falsch!
 registration.errormessage.usernameAllreadyExists = Benutzer existiert bereits!
 
 authentication.pagetitle = Business Informatics Group Quiz - Login
@@ -44,4 +44,4 @@ nav.link.register.value = Registrieren
 nav.link.register.description = Klicke hier um dich zu registrieren
 nav.link.logout.value = Abmelden
 
-footer.title = © 2014 BIG Quiz
+footer.title = Â© 2014 BIG Quiz

@@ -19,11 +19,11 @@
                     <span id="player1name">@game.getPlayers().get(0).getName()</span>
                     <ul class="playerroundsummary">
                         <li><span class="accessibility">Frage 1:</span><span id="player1answer1" 
-                            @if(game.getCurrentRound().getAnswer(1, game.getPlayers().get(0)).isCorrect()) {
+                            @if(game.getCurrentRound().getAnswer(0,game.getPlayers().get(0)).isCorrect()) {    
                                 class="correct">Richtig
                             } else {
                                 class="unknown">Unbekannt
-                            }
+                            }    
                         </span></li>
                         <li><span class="accessibility">Frage 2:</span><span id="player1answer2" class="incorrect">Falsch</span></li>
                         <li><span class="accessibility">Frage 3:</span><span id="player1answer3" class="unknown">Unbekannt</span></li>
@@ -37,7 +37,7 @@
                         <li><span class="accessibility">Frage 3:</span><span id="player2answer3" class="unknown">Unbekannt</span></li>
                     </ul>
                 </div>
-                <div id="currentcategory"><span class="accessibility">Kategorie:</span> Sport</div>
+                <div id="currentcategory"><span class="accessibility">Kategorie:</span>@game.getCurrentRound().getCurrentQuestion(game.getPlayers().get(0)).getCategory().getName()</div>
             </section>
             
             <!-- Question -->
@@ -45,7 +45,7 @@
                 
                 <form id="questionform" action="question.html" method="post">
                     <h2 id="questionheading" class="accessibility">Frage</h2>
-                    <p id="questiontext">Welche zwei LVAs werden im Model EWA zusammengefasst?</p>
+                    <p id="questiontext">@game.getCurrentRound().getCurrentQuestion(game.getPlayers().get(0)).getText()</p>
                     <ul id="answers">
                         <li><input id="option1" type="checkbox"/><label for="option1">IT Strategie</label></li>
                         <li><input id="option2" type="checkbox"/><label for="option2">Web Engineering</label></li>
