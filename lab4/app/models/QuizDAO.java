@@ -93,7 +93,7 @@ public class QuizDAO implements IQuizDAO {
         String query = "FROM " + entityClazz.getName()
                        + " WHERE id = :id";
         return this.em()
-                .createNamedQuery(query, entityClazz)
+                .createQuery(query, entityClazz)
                 .setParameter("id", id)
                 .getSingleResult();
 

@@ -11,6 +11,7 @@ import play.data.Form;
 import play.db.jpa.Transactional;
 import play.i18n.Messages;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Security;
 import scala.Option;
@@ -43,7 +44,7 @@ public class Quiz extends Controller {
 	private static QuizGame createNewGame() {
 		List<Category> allCategories = QuizDAO.INSTANCE.findEntities(Category.class);
 		Logger.info("Start game with " + allCategories.size() + " categories.");
-		QuizGame game = new QuizGame(allCategories);
+		QuizGame game = new QuizGame(allCategories, getAuthenticatedUser());
 		game.startNewRound();
 		cacheGame(game);
 		return game;
@@ -165,7 +166,6 @@ public class Quiz extends Controller {
 		if (game != null && isGameOver(game)) {
 
 
-            Logger.error("=================>");
             HighscoreServiceImpl highscoreService = new HighscoreServiceImpl();
             try {
                 highscoreService.sendGame(game);
@@ -217,5 +217,13 @@ public class Quiz extends Controller {
 	private static Application application() {
 		return Play.application().getWrappedApplication();
 	}
+
+
+    @play.db.jpa.Transactional(readOnly = true)
+    private static QuizUser getAuthenticatedUser(){
+        Long userId = Long.parseLong(Secured.getAuthentication(session()));
+        QuizUser quizUser = QuizDAO.INSTANCE.findById(userId);
+        return quizUser;
+    }
 
 }
