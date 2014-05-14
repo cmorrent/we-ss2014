@@ -1,72 +1,243 @@
-2014-05-14 10:09:16,403 - [INFO] - from play in pool-4-thread-2 
+2014-05-14 16:58:28,059 - [INFO] - from play in pool-4-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-05-14 10:09:28,565 - [INFO] - from play in play-internal-execution-context-1 
+2014-05-14 16:58:36,867 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
 
-2014-05-14 10:09:28,758 - [INFO] - from play in play-internal-execution-context-1 
+2014-05-14 16:58:37,131 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:~/dblab4
 
-2014-05-14 10:09:29,615 - [INFO] - from play in play-internal-execution-context-1 
+2014-05-14 16:58:38,427 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2014-05-14 10:09:50,912 - [ERROR] - from play in play-internal-execution-context-1 
-Cannot invoke the action, eventually got an error: java.lang.UnsupportedOperationException: Not yet implemented.
+2014-05-14 17:00:29,014 - [INFO] - from application in play-internal-execution-context-3 
+Application shutdown...
 
-2014-05-14 10:09:50,923 - [ERROR] - from application in play-internal-execution-context-1 
+2014-05-14 17:00:29,214 - [INFO] - from play in play-internal-execution-context-3 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:00:29,219 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:00:29,539 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2014-05-14 17:00:29,545 - [INFO] - from application in play-akka.actor.default-dispatcher-8 
+=====================>
+
+2014-05-14 17:00:52,169 - [INFO] - from application in play-internal-execution-context-3 
+Application shutdown...
+
+2014-05-14 17:00:52,255 - [INFO] - from play in play-internal-execution-context-3 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:00:52,258 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:00:52,450 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2014-05-14 17:00:52,503 - [ERROR] - from com.sun.xml.internal.messaging.saaj.soap.impl in play-akka.actor.default-dispatcher-6 
+SAAJ0101: Parent of a SOAPBodyElement has to be a SOAPBody
+
+2014-05-14 17:02:00,643 - [INFO] - from application in play-internal-execution-context-3 
+Application shutdown...
+
+2014-05-14 17:02:00,722 - [INFO] - from play in play-internal-execution-context-3 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:02:00,725 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:02:00,897 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2014-05-14 17:02:01,063 - [ERROR] - from application in play-akka.actor.default-dispatcher-15 
+HALLO
+
+2014-05-14 17:02:01,065 - [ERROR] - from application in play-akka.actor.default-dispatcher-15 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body xmlns:data="http://big.tuwien.ac.at/we/highscore/data"/></SOAP-ENV:Envelope>
+
+2014-05-14 17:02:44,149 - [INFO] - from application in play-internal-execution-context-3 
+Application shutdown...
+
+2014-05-14 17:02:44,229 - [INFO] - from play in play-internal-execution-context-3 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:02:44,232 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:02:44,437 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2014-05-14 17:02:44,451 - [ERROR] - from com.sun.xml.internal.messaging.saaj.soap.impl in play-akka.actor.default-dispatcher-18 
+SAAJ0101: Parent of a SOAPBodyElement has to be a SOAPBody
+
+2014-05-14 17:04:07,435 - [INFO] - from application in play-internal-execution-context-4 
+Application shutdown...
+
+2014-05-14 17:04:07,518 - [INFO] - from play in play-internal-execution-context-4 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:04:07,521 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:04:07,715 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2014-05-14 17:04:07,724 - [ERROR] - from com.sun.xml.internal.messaging.saaj.soap.impl in play-akka.actor.default-dispatcher-22 
+SAAJ0101: Parent of a SOAPBodyElement has to be a SOAPBody
+
+2014-05-14 17:07:14,135 - [INFO] - from application in play-internal-execution-context-4 
+Application shutdown...
+
+2014-05-14 17:07:14,235 - [INFO] - from play in play-internal-execution-context-4 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:07:14,238 - [INFO] - from play in play-internal-execution-context-4 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:07:14,407 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2014-05-14 17:07:14,423 - [ERROR] - from application in play-akka.actor.default-dispatcher-30 
+HALLO
+
+2014-05-14 17:07:14,424 - [ERROR] - from application in play-akka.actor.default-dispatcher-30 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body xmlns:data="http://big.tuwien.ac.at/we/highscore/data"><data:UserKey/></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+2014-05-14 17:08:17,091 - [INFO] - from application in play-internal-execution-context-5 
+Application shutdown...
+
+2014-05-14 17:08:17,152 - [INFO] - from play in play-internal-execution-context-5 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:08:17,155 - [INFO] - from play in play-internal-execution-context-5 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:08:17,335 - [INFO] - from play in play-internal-execution-context-5 
+Application started (Dev)
+
+2014-05-14 17:08:17,349 - [ERROR] - from application in play-akka.actor.default-dispatcher-29 
+HALLO
+
+2014-05-14 17:08:17,350 - [ERROR] - from application in play-akka.actor.default-dispatcher-29 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body xmlns:data="http://big.tuwien.ac.at/we/highscore/data"><data:UserKey>test</data:UserKey></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+2014-05-14 17:11:53,768 - [ERROR] - from application in New I/O worker #2 
 
 
-! @6i842echf - Internal server error, for (POST) [/registration] ->
+! @6i865p6cl - Internal server error, for (GET) [/login] ->
 
-play.api.Application$$anon$1: Execution exception[[UnsupportedOperationException: Not yet implemented.]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.2]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.2]
-	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.2]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.2]
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library.jar:na]
-	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
-Caused by: java.lang.UnsupportedOperationException: Not yet implemented.
-	at models.QuizDAO.persist(QuizDAO.java:60) ~[na:na]
-	at controllers.Registration.create(Registration.java:23) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.apply(routes_routing.scala:149) ~[na:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.apply(routes_routing.scala:149) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.2]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.2]
-	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.2]
-	at play.db.jpa.TransactionalAction$1.apply(TransactionalAction.java:20) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.db.jpa.TransactionalAction$1.apply(TransactionalAction.java:18) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.db.jpa.JPA.withTransactionAsync(JPA.java:177) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.db.jpa.TransactionalAction.call(TransactionalAction.java:15) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.2]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.2]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.2]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.2]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.2]
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
-	... 4 common frames omitted
+play.PlayExceptions$CompilationException: Compilation error[error: method attachUserKey in class RequestGenerator cannot be applied to given types;]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.2]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.2]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
 
-2014-05-14 12:29:29,868 - [INFO] - from application in pool-4-thread-2 
+2014-05-14 17:12:21,274 - [INFO] - from application in play-internal-execution-context-5 
+Application shutdown...
+
+2014-05-14 17:12:21,328 - [INFO] - from play in play-internal-execution-context-5 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:12:21,330 - [INFO] - from play in play-internal-execution-context-5 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:12:21,457 - [INFO] - from play in play-internal-execution-context-5 
+Application started (Dev)
+
+2014-05-14 17:12:21,473 - [ERROR] - from application in play-akka.actor.default-dispatcher-35 
+HALLO
+
+2014-05-14 17:12:21,473 - [ERROR] - from application in play-akka.actor.default-dispatcher-35 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body xmlns:data="http://big.tuwien.ac.at/we/highscore/data"><HighScoreRequest><data:UserKey>test</data:UserKey></HighScoreRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+2014-05-14 17:21:21,468 - [ERROR] - from application in New I/O worker #8 
+
+
+! @6i8675e7i - Internal server error, for (GET) [/login] ->
+
+play.PlayExceptions$CompilationException: Compilation error[error: ';' expected]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.2]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.2]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-05-14 17:21:46,166 - [INFO] - from application in play-internal-execution-context-6 
+Application shutdown...
+
+2014-05-14 17:21:46,230 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
+
+2014-05-14 17:21:46,233 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:~/dblab4
+
+2014-05-14 17:21:46,370 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-05-14 17:21:46,387 - [ERROR] - from application in play-akka.actor.default-dispatcher-44 
+HALLO
+
+2014-05-14 17:21:46,388 - [ERROR] - from application in play-akka.actor.default-dispatcher-44 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body xmlns:data="http://big.tuwien.ac.at/we/highscore/data"><data:HighScoreRequest><data:UserKey>test</data:UserKey><quiz><users/></quiz></data:HighScoreRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+2014-05-14 17:27:51,412 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6i8681j3h - Internal server error, for (GET) [/login] ->
+
+play.PlayExceptions$CompilationException: Compilation error[error: missing return statement]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.2]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.2]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-05-14 17:47:34,663 - [INFO] - from application in pool-4-thread-3 
 Application shutdown...
 

@@ -8,6 +8,6 @@ public class Application extends Controller {
 
 	@Security.Authenticated(Secured.class)
 	public static Result index() {
-		return redirect(routes.Quiz.index());
+        return redirect(routes.Quiz.index());
 	}
 }
