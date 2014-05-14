@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="big-dbpedia-api.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/big-dbpedia-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

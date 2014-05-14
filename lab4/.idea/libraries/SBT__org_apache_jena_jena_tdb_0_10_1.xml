@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.jena:jena-tdb:0.10.1">
+    <CLASSES>
+      <root url="jar:///opt/play-2.2.2/repository/cache/org.apache.jena/jena-tdb/jars/jena-tdb-0.10.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

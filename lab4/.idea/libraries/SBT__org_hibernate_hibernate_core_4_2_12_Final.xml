@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.hibernate:hibernate-core:4.2.12.Final">
+    <CLASSES>
+      <root url="jar:///opt/play-2.2.2/repository/cache/org.hibernate/hibernate-core/jars/hibernate-core-4.2.12.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

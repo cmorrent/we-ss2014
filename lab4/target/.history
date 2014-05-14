@@ -1,0 +1,13 @@
+exit
+compile
+idea
+run
+git clean
+clean
+compile
+run
+clean
+exit
+run
+clean
+exit
