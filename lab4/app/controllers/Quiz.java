@@ -1,5 +1,6 @@
 package controllers;
 
+import HighsoreService.HighscoreServiceImpl;
 import models.*;
 import play.Logger;
 import play.Play;
@@ -18,6 +19,8 @@ import views.html.quiz.quiz;
 import views.html.quiz.quizover;
 import views.html.quiz.roundover;
 
+import javax.xml.soap.SOAPException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -160,7 +163,19 @@ public class Quiz extends Controller {
 	public static Result endResult() {
 		QuizGame game = cachedGame();
 		if (game != null && isGameOver(game)) {
-			return ok(quizover.render(game));
+
+
+            Logger.error("=================>");
+            HighscoreServiceImpl highscoreService = new HighscoreServiceImpl();
+            try {
+                highscoreService.sendGame(game);
+            } catch (SOAPException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return ok(quizover.render(game));
 		} else {
 			return badRequest(Messages.get("quiz.no-end-result"));
 		}

@@ -63,63 +63,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QuizDAO.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/QuizDAO.java">
+      <file leaf-file-name="Quiz.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Quiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="17" selection-start="2957" selection-end="2957" vertical-scroll-proportion="0.3207547" vertical-offset="1562" max-vertical-offset="2322">
+            <state line="167" column="45" selection-start="4752" selection-end="4752" vertical-scroll-proportion="0.0" vertical-offset="2408" max-vertical-offset="3654">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuizUser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/QuizUser.java">
+      <file leaf-file-name="RequestGenerator.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/HighsoreService/RequestGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1512">
+            <state line="133" column="26" selection-start="4124" selection-end="4124" vertical-scroll-proportion="0.7574124" vertical-offset="1706" max-vertical-offset="3096">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Category.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Category.java">
+      <file leaf-file-name="HighscoreServiceImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/HighsoreService/HighscoreServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1548">
+            <state line="16" column="81" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
               <folding>
-                <element signature="e#426#436#0" expanded="true" />
-                <element signature="e#1407#1408#0" expanded="true" />
-                <element signature="e#1436#1437#0" expanded="true" />
-                <element signature="e#1480#1481#0" expanded="true" />
-                <element signature="e#1516#1517#0" expanded="true" />
-                <element signature="e#1549#1550#0" expanded="true" />
-                <element signature="e#1578#1579#0" expanded="true" />
-                <element signature="e#1622#1623#0" expanded="true" />
-                <element signature="e#1658#1659#0" expanded="true" />
-                <element signature="e#1702#1703#0" expanded="true" />
-                <element signature="e#1734#1735#0" expanded="true" />
-                <element signature="e#1792#1793#0" expanded="true" />
-                <element signature="e#1834#1835#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Question.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Question.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="89" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
-              <folding>
-                <element signature="e#616#624#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Choice.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Choice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1404">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -136,7 +104,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/HighsoreService/Requestor.java" />
         <option value="$PROJECT_DIR$/app/controllers/Application.java" />
-        <option value="$PROJECT_DIR$/app/HighsoreService/RequestGenerator.java" />
         <option value="$PROJECT_DIR$/test/SOAPTest.java" />
         <option value="$PROJECT_DIR$/app/controllers/Authentication.java" />
         <option value="$PROJECT_DIR$/app/models/QuizGame.java" />
@@ -146,6 +113,9 @@
         <option value="$PROJECT_DIR$/app/models/QuizUser.java" />
         <option value="$PROJECT_DIR$/app/models/Question.java" />
         <option value="$PROJECT_DIR$/app/models/QuizDAO.java" />
+        <option value="$PROJECT_DIR$/app/HighsoreService/HighscoreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/app/controllers/Quiz.java" />
+        <option value="$PROJECT_DIR$/app/HighsoreService/RequestGenerator.java" />
       </list>
     </option>
   </component>
@@ -259,6 +229,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lab4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HighsoreService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -586,12 +574,12 @@
       <updated>1400011104484</updated>
       <workItem from="1400011105353" duration="1385000" />
       <workItem from="1400054519947" duration="1687000" />
-      <workItem from="1400070346032" duration="13383000" />
+      <workItem from="1400070346032" duration="15912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16455000" />
+    <option name="totallyTimeSpent" value="18984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1602" height="874" extended-state="7" />
@@ -698,22 +686,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/HighsoreService/SOAPRequestor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="57" selection-start="574" selection-end="574" vertical-scroll-proportion="0.46091643" vertical-offset="0" max-vertical-offset="742">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Quiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="624" selection-end="624" vertical-scroll-proportion="-3.5121293" vertical-offset="2696" max-vertical-offset="3438">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/routes">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="742">
@@ -725,15 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="34" selection-start="339" selection-end="339" vertical-scroll-proportion="0.16981132" vertical-offset="0" max-vertical-offset="742">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/HighsoreService/RequestGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="285" selection-end="285" vertical-scroll-proportion="0.07277628" vertical-offset="216" max-vertical-offset="2556">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,22 +713,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="0.26684636" vertical-offset="0" max-vertical-offset="1098">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/QuizGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="70" selection-start="2150" selection-end="2150" vertical-scroll-proportion="1.7223719" vertical-offset="252" max-vertical-offset="3708">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,9 +762,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/QuizUser.java">
+    <entry file="file://$PROJECT_DIR$/app/models/QuizGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1512">
+        <state line="93" column="70" selection-start="2150" selection-end="2150" vertical-scroll-proportion="-1.93531" vertical-offset="2966" max-vertical-offset="3708">
           <folding />
         </state>
       </provider>
@@ -825,6 +772,45 @@
     <entry file="file://$PROJECT_DIR$/app/models/QuizDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="108" column="17" selection-start="2957" selection-end="2957" vertical-scroll-proportion="0.3207547" vertical-offset="1562" max-vertical-offset="2322">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Authentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="0.1212938" vertical-offset="108" max-vertical-offset="1098">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/QuizUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.16981132" vertical-offset="54" max-vertical-offset="1512">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Quiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="45" selection-start="4752" selection-end="4752" vertical-scroll-proportion="0.0" vertical-offset="2408" max-vertical-offset="3654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/HighsoreService/HighscoreServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="81" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/HighsoreService/RequestGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="26" selection-start="4124" selection-end="4124" vertical-scroll-proportion="0.7574124" vertical-offset="1706" max-vertical-offset="3096">
           <folding />
         </state>
       </provider>

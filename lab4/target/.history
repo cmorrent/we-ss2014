@@ -43,3 +43,9 @@ run
 git clean
 clean
 exit
+run
+exit
+ru
+run
+clean
+exit

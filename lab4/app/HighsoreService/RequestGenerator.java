@@ -84,6 +84,8 @@ public class RequestGenerator {
     private SOAPElement attachUsers(SOAPElement parent)
             throws SOAPException {
         SOAPElement usersElement = parent.addChildElement("users");
+        attachWinner(usersElement);
+        attachLooser(usersElement);
         return usersElement;
     }
 
@@ -117,20 +119,55 @@ public class RequestGenerator {
     private SOAPElement attachUser(SOAPElement parent, QuizUser quizUser)
             throws SOAPException {
         SOAPElement userElement = parent.addChildElement("user");
-        userElement.setAttribute("gender", quizUser.getGender().toString());
+        userElement.setAttribute("gender", getGenderStringForUser(quizUser));
 
         SOAPElement passwordElement = userElement.addChildElement("password");
 
         SOAPElement firstnameElement = userElement.addChildElement("firstname");
-        firstnameElement.addTextNode(quizUser.getFirstName());
+        firstnameElement.addTextNode(getFirstnameForUser(quizUser));
 
         SOAPElement lastnameElement = userElement.addChildElement("lastname");
-        lastnameElement.addTextNode(quizUser.getLastName());
+        lastnameElement.addTextNode(getLastnaeForUser(quizUser));
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SOAPElement birthdateElement = userElement.addChildElement("birthdate");
-        birthdateElement.addTextNode(dateFormat.format(quizUser.getBirthDate()));
-        return parent;
+        birthdateElement.addTextNode(getDateStringForUser(quizUser));
+        return userElement;
     }
 
+
+    private String getFirstnameForUser(QuizUser quizUser){
+        if(quizUser.getFirstName() != null){
+            return quizUser.getFirstName();
+        }else{
+            return "";
+        }
+    }
+
+
+    private String getLastnaeForUser(QuizUser quizUser){
+        if(quizUser.getLastName() != null){
+            return quizUser.getLastName();
+        }else{
+            return "";
+        }
+    }
+
+
+    private String getGenderStringForUser(QuizUser quizUser){
+        if(quizUser.getGender() != null){
+            return quizUser.getGender().toString();
+        }else{
+            return null;
+        }
+    }
+
+
+    private String getDateStringForUser(QuizUser quizUser){
+        if(quizUser.getBirthDate() != null){
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            return dateFormat.format(quizUser.getBirthDate());
+        }else{
+            return "";
+        }
+    }
 }

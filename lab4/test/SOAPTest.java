@@ -1,4 +1,4 @@
-import HighsoreService.SOAPRequestor;
+import HighsoreService.HighscoreServiceImpl;
 import org.junit.Test;
 
 import javax.xml.soap.SOAPException;
@@ -13,7 +13,7 @@ public class SOAPTest {
 
     @Test
     public static void testMessage() throws IOException, SOAPException {
-        SOAPRequestor.sendGame(null);
+        HighscoreServiceImpl.sendGame(null);
         assertTrue(false);
     }
 }
