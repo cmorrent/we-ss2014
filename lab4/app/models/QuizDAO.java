@@ -1,9 +1,13 @@
 package models;
 
+import play.Logger;
 import play.db.jpa.JPA;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
@@ -56,8 +60,9 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public void persist(BaseEntity entity) {
-        // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+        this.em().persist(entity);
+        // TODO: Find out what else todo
+        // throw new UnsupportedOperationException("Not yet implemented.");
     }
 
 
@@ -70,8 +75,10 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public <T extends BaseEntity> T merge(T entity) {
+        return this.em().merge(entity);
+        // TODO: Find out what else todo
         // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+        // throw new UnsupportedOperationException("Not yet implemented.");
     }
 
     /**
@@ -83,8 +90,15 @@ public class QuizDAO implements IQuizDAO {
      */
     @Override
     public <T extends BaseEntity> T findEntity(Long id, Class<T> entityClazz) {
+        String query = "FROM " + entityClazz.getName()
+                       + " WHERE id = :id";
+        return this.em()
+                .createNamedQuery(query, entityClazz)
+                .setParameter("id", id)
+                .getSingleResult();
+
         // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+        // throw new UnsupportedOperationException("Not yet implemented.");
     }
 
 
@@ -98,7 +112,11 @@ public class QuizDAO implements IQuizDAO {
     @Override
     public <E extends BaseEntity> List<E> findEntities(Class<E> entityClazz) {
         // TODO: Implement Method
-        throw new UnsupportedOperationException("Not yet implemented.");
+        String query = "FROM " + entityClazz.getSimpleName();
+        return this.em()
+                .createQuery(query, entityClazz)
+                .getResultList();
+        //throw new UnsupportedOperationException("Not yet implemented.");
     }
 
 

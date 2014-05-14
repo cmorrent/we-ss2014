@@ -1,19 +1,21 @@
 package models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Represents a category, which is stored in the DB
  */
+@Entity
 public class Category extends BaseEntity {
-
 
     private String nameDE;
     private String nameEN;
 
 
     //A list of questions in this category
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "category")
     private List<Question> questions = new ArrayList<Question>();
 
     /**

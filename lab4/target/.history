@@ -28,3 +28,18 @@ exit
 run
 clean
 exit
+run
+test
+run
+test
+version
+v
+exit
+help
+about
+run
+clean
+run
+git clean
+clean
+exit

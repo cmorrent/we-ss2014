@@ -19,11 +19,6 @@ public class QuizUser extends BaseEntity {
 		male, female
 	}
 
-    //@TODO - as soon as the id attribute has been introduced to the base entity - remove the ID
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
 
 	@Constraints.Required
 	@Constraints.MinLength(4)

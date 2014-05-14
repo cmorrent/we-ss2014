@@ -1,5 +1,6 @@
 package models;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,18 +8,20 @@ import java.util.List;
 /**
  * Represents a question, which is stored in the DB
  */
+@Entity
 public class Question extends BaseEntity {
-
 
     private String textDE;
     private String textEN;
     private BigDecimal maxtime;
 
     //The category to which this question belongs to
+    @ManyToOne
     private Category category;
 
 
     //A list of choices belonging to this question
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "question", fetch = FetchType.EAGER)
     private List<Choice> choices = new ArrayList<Choice>();
 
 

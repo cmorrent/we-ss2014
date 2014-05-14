@@ -1,5 +1,7 @@
 package models;
 
+import play.Logger;
+
 import static java.lang.Math.random;
 import static java.lang.Math.round;
 

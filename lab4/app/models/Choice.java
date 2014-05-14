@@ -1,10 +1,12 @@
 package models;
 
+import javax.persistence.*;
+
 /**
  * Represents a choice which is stored in the DB
  */
+@Entity
 public class Choice extends BaseEntity {
-
 
     private String textDE;
     private String textEN;
@@ -13,6 +15,7 @@ public class Choice extends BaseEntity {
     private Boolean correctAnswer;
 
     //The question this choice belongs to
+    @ManyToOne
     private Question question;
 
     /**

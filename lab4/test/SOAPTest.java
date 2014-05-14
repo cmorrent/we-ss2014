@@ -14,6 +14,6 @@ public class SOAPTest {
     @Test
     public static void testMessage() throws IOException, SOAPException {
         SOAPRequestor.sendGame(null);
-        assertTrue(true);
+        assertTrue(false);
     }
 }
