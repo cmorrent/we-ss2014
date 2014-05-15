@@ -5,10 +5,7 @@ import play.Logger;
 import static java.lang.Math.random;
 import static java.lang.Math.round;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class QuizGame {
 	private static int NUM_ROUNDS = 5;
@@ -66,7 +63,16 @@ public class QuizGame {
 
 	private QuizUser createComputerPlayer() {
 		QuizUser user = new QuizUser();
+        user.setGender(QuizUser.Gender.female);
 		user.setName("Spieler 2");
+        user.setFirstName("Computer");
+        user.setLastName("BIG");
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(0);
+        cal.set(2014, 5, 14, 0, 0, 0);
+        Date date = cal.getTime();
+        user.setBirthDate(date);
 		return user;
 	}
 
