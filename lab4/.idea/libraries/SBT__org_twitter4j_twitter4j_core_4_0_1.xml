@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.twitter4j:twitter4j-core:4.0.1">
+    <CLASSES>
+      <root url="jar:///opt/play-2.2.2/repository/cache/org.twitter4j/twitter4j-core/jars/twitter4j-core-4.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

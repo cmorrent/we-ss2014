@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.javassist:javassist:3.18.1-GA">
+    <CLASSES>
+      <root url="jar:///opt/play-2.2.2/repository/cache/org.javassist/javassist/bundles/javassist-3.18.1-GA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
