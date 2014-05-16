@@ -103,7 +103,7 @@ public class RequestGenerator {
             throws SOAPException {
         QuizUser quizUser = getGameLooser();
         SOAPElement userElement = attachUser(parent, quizUser);
-        userElement.setAttribute("name", "looser");
+        userElement.setAttribute("name", "loser");
         return userElement;
     }
 

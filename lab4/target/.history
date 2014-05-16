@@ -52,3 +52,7 @@ exit
 run
 clean
 exit
+run
+clean
+q
+exit
