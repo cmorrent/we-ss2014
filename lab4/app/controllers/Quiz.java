@@ -1,6 +1,11 @@
 package controllers;
 
-import HighsoreService.HighscoreServiceImpl;
+import HighsoreService.HighscoreService;
+import HighsoreService.HighscoreServiceException;
+import HighsoreService.HighscoreServiceFactory;
+import HighsoreService.InvalidUserDataException;
+import HighsoreService.SimpleHighscoreService.SimpleHighscoreService;
+import HighsoreService.SimpleHighscoreServiceWithPlayConfigFactory.SimpleHighscoreServiceWithPlayConfigFactory;
 import models.*;
 import play.Logger;
 import play.Play;
@@ -11,7 +16,6 @@ import play.data.Form;
 import play.db.jpa.Transactional;
 import play.i18n.Messages;
 import play.mvc.Controller;
-import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Security;
 import scala.Option;
@@ -21,7 +25,6 @@ import views.html.quiz.quizover;
 import views.html.quiz.roundover;
 
 import javax.xml.soap.SOAPException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -164,22 +167,31 @@ public class Quiz extends Controller {
 	public static Result endResult() {
 		QuizGame game = cachedGame();
 		if (game != null && isGameOver(game)) {
-
-
-            HighscoreServiceImpl highscoreService = new HighscoreServiceImpl();
-            try {
-                highscoreService.sendGame(game);
-            } catch (SOAPException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+            uploadGameToWebservices(game);
             return ok(quizover.render(game));
 		} else {
 			return badRequest(Messages.get("quiz.no-end-result"));
 		}
 	}
+
+
+    private static void uploadGameToWebservices(QuizGame game){
+        HighscoreServiceFactory highscoreServiceFactory = SimpleHighscoreServiceWithPlayConfigFactory.getInstance();
+        HighscoreService highscoreService = highscoreServiceFactory.create();
+
+        try {
+            String uuid = highscoreService.sendGameAndReciveUUID(game);
+            Logger.debug("Result successfully posted on Highscoreservice with UIDD: " + uuid);
+        } catch (SOAPException e) {
+            e.printStackTrace();
+        } catch (HighscoreServiceException e) {
+            Logger.error("HighscoreService reported an error: " + e.getMessage());
+        } catch (InvalidUserDataException e) {
+            Logger.error("Cannot create request for highscore service:" + e.getMessage());
+        }
+
+    }
+
 
 	@play.db.jpa.Transactional(readOnly = true)
 	public static Result newRound() {
