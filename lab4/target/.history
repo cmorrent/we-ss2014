@@ -76,3 +76,10 @@ clean
 run
 clean
 exit
+compile
+run
+clean
+compile
+run
+clean
+exit

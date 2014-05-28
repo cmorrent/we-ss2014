@@ -4,7 +4,7 @@
 		module="lab4-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20140514164200"
+		publication="20140527213612"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>
