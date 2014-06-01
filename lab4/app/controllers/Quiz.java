@@ -34,10 +34,8 @@ import java.util.UUID;
 import twitter.ITwitterClient;
 import twitter.TwitterClient;
 import twitter.TwitterStatusMessage;
-import twitter4j.Twitter;
 import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
-import twitter4j.conf.ConfigurationBuilder;
+
 
 import java.util.Date;
 
@@ -204,10 +202,13 @@ public class Quiz extends Controller {
 				
 			} catch (TwitterException e){
 		      	  Logger.debug("Connection to twitter reported an Error: " + e.getMessage());
+		      	  game.setTwitterCheck("Highscore was not posted on Twitter. Connection to twitter could not be established!");
 	      	} catch (Exception e) {
 	      		Logger.debug(e.getMessage());
+	      		game.setTwitterCheck("Highscore was not posted on Twitter. An Error occured!");
 			}
 			Logger.debug("Highscore was tweeted successfully!");
+			game.setTwitterCheck("UUID " + uuid + " wurde auf Twitter veröffentlicht!");
            
           
                 Logger.debug("Result successfully posted on Highscoreservice with UIDD: " + uuid);

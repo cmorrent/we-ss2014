@@ -17,6 +17,8 @@ public class QuizGame {
 	private QuizUser computer;
 
 	private List<Category> categories;
+	
+	private String twitterCheck;
 
 	/**
 	 * list of already chosen categories during the game
@@ -211,4 +213,14 @@ public class QuizGame {
 		}
 		return null;
 	}
+	
+	public void setTwitterCheck(String twitterCheck){
+		this.twitterCheck = twitterCheck;
+	}
+	
+	public String getTwitterCheck(){
+		return this.twitterCheck;
+	}
+	
+	
 }
