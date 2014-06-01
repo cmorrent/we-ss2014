@@ -8,6 +8,8 @@ import play.Play;
 import play.db.jpa.JPA;
 import play.libs.F.Function0;
 
+import data.DBPediaQuestionInserter;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -32,6 +34,7 @@ public class Global extends GlobalSettings {
 			@Override
 			public Boolean apply() throws Throwable {
 				insertJSonData();
+				DBPediaQuestionInserter.insertDBPediaQuestions();
 				return true;
 			}
 			   
