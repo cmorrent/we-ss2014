@@ -1,41 +1,41 @@
-2014-05-28 12:34:57,276 - [INFO] - from play in pool-6-thread-4 
+2014-06-01 02:08:39,571 - [INFO] - from play in pool-34-thread-2 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-05-28 12:34:59,513 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-01 02:08:43,382 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:~/dblab4;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=9333] bound to JNDI as DefaultDS
 
-2014-05-28 12:34:59,692 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-01 02:08:43,408 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:~/dblab4
 
-2014-05-28 12:35:00,737 - [INFO] - from application in play-internal-execution-context-1 
+2014-06-01 02:08:46,127 - [INFO] - from application in play-internal-execution-context-1 
 Data from json file 'data.json' inserted.
 
-2014-05-28 12:35:00,768 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-01 02:08:46,156 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2014-05-28 12:35:04,540 - [INFO] - from application in play-akka.actor.default-dispatcher-6 
+2014-06-01 02:08:48,548 - [INFO] - from application in play-akka.actor.default-dispatcher-4 
 Start game with 5 categories.
 
-2014-05-28 12:35:04,585 - [ERROR] - from play in play-internal-execution-context-1 
+2014-06-01 02:08:48,593 - [ERROR] - from play in play-internal-execution-context-1 
 Cannot invoke the action, eventually got an error: java.lang.NullPointerException
 
-2014-05-28 12:35:04,604 - [ERROR] - from application in play-internal-execution-context-1 
+2014-06-01 02:08:48,607 - [ERROR] - from application in play-internal-execution-context-1 
 
 
-! @6ic2gf9m1 - Internal server error, for (GET) [/quiz/question] ->
+! @6id2egggp - Internal server error, for (GET) [/quiz/question] ->
 
 play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.2]
-	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.2]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10-2.2.2.jar:2.2.2]
 	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.2]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10-2.2.2.jar:2.2.2]
 	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library.jar:na]
 	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library.jar:na]
 	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.2]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.2.jar:2.2.2]
 	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library.jar:na]
 	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library.jar:na]
 	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
@@ -53,33 +53,43 @@ Caused by: java.lang.NullPointerException: null
 	at views.html.quiz.quiz$.apply(quiz.template.scala:54) ~[na:na]
 	at views.html.quiz.quiz$.render(quiz.template.scala:157) ~[na:na]
 	at views.html.quiz.quiz.render(quiz.template.scala) ~[na:na]
-	at controllers.Quiz.question(Quiz.java:69) ~[na:na]
+	at controllers.Quiz.question(Quiz.java:81) ~[na:na]
 	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$10$$anonfun$apply$10.apply(routes_routing.scala:173) ~[na:na]
 	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$10$$anonfun$apply$10.apply(routes_routing.scala:173) ~[na:na]
-	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.2]
-	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.2]
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.2]
-	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.2]
-	at play.mvc.Security$AuthenticatedAction.call(Security.java:45) ~[play_2.10.jar:2.2.2]
-	at play.db.jpa.TransactionalAction$1.apply(TransactionalAction.java:20) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.db.jpa.TransactionalAction$1.apply(TransactionalAction.java:18) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.db.jpa.JPA.withTransactionAsync(JPA.java:177) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.db.jpa.TransactionalAction.call(TransactionalAction.java:15) ~[play-java-jpa_2.10.jar:2.2.2]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.2]
-	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.2]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.2]
-	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.2]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.mvc.Security$AuthenticatedAction.call(Security.java:45) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.db.jpa.TransactionalAction$1.apply(TransactionalAction.java:20) ~[play-java-jpa_2.10-2.2.2.jar:2.2.2]
+	at play.db.jpa.TransactionalAction$1.apply(TransactionalAction.java:18) ~[play-java-jpa_2.10-2.2.2.jar:2.2.2]
+	at play.db.jpa.JPA.withTransactionAsync(JPA.java:177) ~[play-java-jpa_2.10-2.2.2.jar:2.2.2]
+	at play.db.jpa.TransactionalAction.call(TransactionalAction.java:15) ~[play-java-jpa_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
 	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library.jar:na]
 	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library.jar:na]
 	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library.jar:na]
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.2]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
 	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
 	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
 	... 4 common frames omitted
 
-2014-05-28 12:35:22,111 - [INFO] - from application in play-akka.actor.default-dispatcher-4 
+2014-06-01 02:09:25,588 - [INFO] - from application in play-akka.actor.default-dispatcher-12 
 Start game with 5 categories.
 
-2014-05-28 12:38:25,999 - [DEBUG] - from application in play-akka.actor.default-dispatcher-26 
-Result successfully posted on Highscoreservice with UIDD: 2fb89750-47e2-4c6e-97db-54641ed2b65a
+2014-06-01 02:09:39,523 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+Connecting to Twitter...
+
+2014-06-01 02:09:39,524 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+Creating Status Message...
+Sun Jun 01 02:09:39 CEST 2014: User Spieler 2 publizierte folgende UUID am Highscoreboard: b47f5bdb-a599-4e53-b7c4-c0cb4b071e77
+
+2014-06-01 02:09:40,219 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+Highscore was tweeted successfully!
+
+2014-06-01 02:09:40,221 - [DEBUG] - from application in play-akka.actor.default-dispatcher-9 
+Result successfully posted on Highscoreservice with UIDD: b47f5bdb-a599-4e53-b7c4-c0cb4b071e77
 

@@ -25,10 +25,22 @@ import views.html.quiz.quizover;
 import views.html.quiz.roundover;
 
 import javax.xml.soap.SOAPException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import twitter.ITwitterClient;
+import twitter.TwitterClient;
+import twitter.TwitterStatusMessage;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.conf.ConfigurationBuilder;
+
+import java.util.Date;
+
 
 @Security.Authenticated(Secured.class)
 public class Quiz extends Controller {
@@ -175,20 +187,37 @@ public class Quiz extends Controller {
 	}
 
 
-    private static void uploadGameToWebservices(QuizGame game){
+    private static void uploadGameToWebservices(QuizGame game) {
         HighscoreServiceFactory highscoreServiceFactory = SimpleHighscoreServiceWithPlayConfigFactory.getInstance();
         HighscoreService highscoreService = highscoreServiceFactory.create();
 
         try {
             String uuid = highscoreService.sendGameAndReciveUUID(game);
-            Logger.debug("Result successfully posted on Highscoreservice with UIDD: " + uuid);
+            
+           ITwitterClient twitterClient = new TwitterClient();
+           Logger.debug("Connecting to Twitter...");
+           TwitterStatusMessage statusMessage = new TwitterStatusMessage(game.getWinner().getName(), uuid, new Date());
+            Logger.debug("Creating Status Message...\n" + statusMessage.getTwitterPublicationString());
+           
+			try {
+				twitterClient.publishUuid(statusMessage);
+				
+			} catch (TwitterException e){
+		      	  Logger.debug("Connection to twitter reported an Error: " + e.getMessage());
+	      	} catch (Exception e) {
+	      		Logger.debug(e.getMessage());
+			}
+			Logger.debug("Highscore was tweeted successfully!");
+           
+          
+                Logger.debug("Result successfully posted on Highscoreservice with UIDD: " + uuid);
         } catch (SOAPException e) {
             e.printStackTrace();
         } catch (HighscoreServiceException e) {
             Logger.error("HighscoreService reported an error: " + e.getMessage());
         } catch (InvalidUserDataException e) {
             Logger.error("Cannot create request for highscore service:" + e.getMessage());
-        }
+        } 
 
     }
 
